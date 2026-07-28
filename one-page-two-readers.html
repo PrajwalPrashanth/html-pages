@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Why two AI agents can't disagree about a shared page — and where the real disagreement is.">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>One page, two readers — and where the disagreement actually is</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Albert+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f3ec; --paper2:#efe9de; --ink:#26221b; --ink2:#5c554a;
+  --rust:#b0492a; --rust-soft:#f0ddd4; --pine:#2e5c47; --pine-soft:#dde8e1;
+  --line:#d9d1c2; --card:#fffdf8; --gold:#c08a2d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Albert Sans',sans-serif;line-height:1.6;font-size:16px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 30px 90px}
+h1,h2{font-family:'Fraunces',serif}
+h1{font-size:2.7rem;font-weight:700;line-height:1.08;margin-bottom:14px;letter-spacing:-.01em}
+h2{font-size:1.7rem;font-weight:600;margin:62px 0 6px;line-height:1.2}
+p{margin:0 0 14px;max-width:62ch;font-size:1.05rem}
+.sub{color:var(--ink2);font-size:1.12rem;max-width:60ch}
+.kicker{font-family:'Spline Sans Mono',monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);margin-bottom:16px}
+.big{font-size:1.32rem;line-height:1.45;max-width:56ch;color:var(--ink)}
+.big b{color:var(--rust)}
+.q{border-left:3px solid var(--line);padding:2px 0 2px 18px;margin:0 0 26px;color:var(--ink2);font-size:1.06rem;max-width:60ch;font-style:italic}
+figure{margin:26px 0 8px}
+.fig{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+figcaption{font-size:.95rem;color:var(--ink2);margin-top:10px;max-width:60ch}
+figcaption b{color:var(--ink)}
+svg{width:100%;height:auto;display:block}
+.keys{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.k{font-size:.82rem;padding:5px 12px;border-radius:99px;border:1px solid var(--line);background:var(--paper2);color:var(--ink2)}
+.k i{width:22px;height:0;border-top:3px solid;display:inline-block;vertical-align:3px;margin-right:7px}
+.k.new{background:#fdf6e8;border-color:#e8d3a4;color:#8a6317;font-weight:600}
+.k.gap{background:var(--rust-soft);border-color:#e6c8ba;color:var(--rust)}
+.k.no{background:var(--paper2);color:#948a79;text-decoration:line-through}
+.punch{background:var(--ink);color:#f7f3ec;border-radius:18px;padding:26px 30px;margin:30px 0}
+.punch p{color:#f7f3ec;font-size:1.24rem;max-width:56ch;margin:0}
+.punch p+p{margin-top:12px;color:#c9c0ae;font-size:1.02rem}
+.punch em{color:#e9b54a;font-style:normal;font-weight:600}
+/* the 2x2 */
+.g22{display:grid;grid-template-columns:132px 1fr 1fr;gap:12px;margin:24px 0 6px}
+.g22 .ax{font-family:'Spline Sans Mono',monospace;font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink2);display:flex;align-items:flex-end;padding-bottom:6px;line-height:1.35}
+.g22 .ay{font-family:'Spline Sans Mono',monospace;font-size:.78rem;color:var(--rust);display:flex;align-items:center;line-height:1.35}
+.g22 .c{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:16px 18px}
+.g22 .c strong{font-family:'Fraunces',serif;font-size:1.12rem;font-weight:600;display:block;margin-bottom:4px}
+.g22 .c span{font-size:.95rem;color:var(--ink2)}
+.g22 .c.ok{background:#f4f8f5;border-color:#cfe1d6}
+.g22 .c.no{background:repeating-linear-gradient(45deg,#fffdf8,#fffdf8 8px,#f1ebdf 8px,#f1ebdf 16px)}
+.g22 .c.no strong{color:#948a79;text-decoration:line-through}
+.g22 .c.hot{background:#fdf6e8;border-color:var(--gold);border-width:2.5px;box-shadow:0 6px 22px -12px rgba(192,138,45,.7)}
+.g22 .c.hot strong{color:#8a6317}
+.g22 .c .tagn{display:inline-block;margin-top:9px;font-family:'Spline Sans Mono',monospace;font-size:.68rem;letter-spacing:.1em;background:var(--gold);color:#fff;padding:3px 9px;border-radius:99px}
+@media(max-width:680px){.g22{grid-template-columns:1fr}.g22 .ax{display:none}.g22 .ay{padding-top:10px}}
+.note{border-top:1px solid var(--line);margin-top:56px;padding-top:20px}
+.note p{font-size:.98rem;color:var(--ink2)}
+footer{margin-top:52px;border-top:1px solid var(--line);padding-top:14px;font-family:'Spline Sans Mono',monospace;font-size:.72rem;color:var(--ink2)}
+@media(max-width:640px){h1{font-size:2.05rem}.wrap{padding:36px 20px 70px}.big{font-size:1.14rem}.punch p{font-size:1.08rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+@media print{.punch{background:#fff;color:#000}.punch p{color:#000}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">The idea, in five pictures</div>
+  <h1>Two agents can't disagree here.<br>You and your own agent can.</h1>
+  <p class="sub">You asked what happens when two AI agents read the same artifact differently, and whether something has to resolve that. Short answer: that's not the fight. Here's the one that is.</p>
+
+  <!-- ============ 1 ============ -->
+  <h2>Start here: one page, two readers</h2>
+  <p>A person needs a page they can look at. An AI needs the shape underneath it. Today those are two different documents and somebody spends their life translating between them.</p>
+  <p class="big">The whole idea is that they're <b>the same file</b>.</p>
+
+  <figure>
+    <div class="fig">
+      <svg viewBox="0 0 760 330" role="img" aria-label="A person on the left and an AI agent on the right both looking at one page in the middle; the page alternates between the visual layout a person sees and the outline an agent reads">
+        <!-- person -->
+        <circle cx="98" cy="120" r="26" fill="#dde8e1" stroke="#2e5c47" stroke-width="2"/>
+        <path d="M56,186 Q98,142 140,186" fill="#dde8e1" stroke="#2e5c47" stroke-width="2"/>
+        <text x="98" y="222" text-anchor="middle" font-family="Fraunces,serif" font-size="16" font-weight="600" fill="#26221b">You</text>
+
+        <!-- agent -->
+        <rect x="608" y="94" width="104" height="80" rx="18" fill="#f0ddd4" stroke="#b0492a" stroke-width="2"/>
+        <circle cx="638" cy="128" r="5.5" fill="#b0492a"/><circle cx="682" cy="128" r="5.5" fill="#b0492a"/>
+        <path d="M638,152 Q660,164 682,152" stroke="#b0492a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <text x="660" y="222" text-anchor="middle" font-family="Fraunces,serif" font-size="16" font-weight="600" fill="#26221b">Your agent</text>
+
+        <!-- sightlines -->
+        <path d="M148,140 L268,140" stroke="#2e5c47" stroke-width="2" stroke-dasharray="5 5" opacity=".55"/>
+        <path d="M600,140 L492,140" stroke="#b0492a" stroke-width="2" stroke-dasharray="5 5" opacity=".55"/>
+
+        <!-- the page -->
+        <rect x="272" y="34" width="216" height="212" rx="13" fill="#fffdf8" stroke="#c08a2d" stroke-width="2.5"/>
+
+        <!-- view A: what a person sees -->
+        <g>
+          <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;.42;.5;.92;1" dur="9s" repeatCount="indefinite"/>
+          <rect x="294" y="56" width="104" height="13" rx="3" fill="#26221b"/>
+          <rect x="294" y="80" width="172" height="6" rx="3" fill="#ded6c6"/>
+          <rect x="294" y="93" width="150" height="6" rx="3" fill="#ded6c6"/>
+          <rect x="294" y="106" width="164" height="6" rx="3" fill="#ded6c6"/>
+          <rect x="294" y="132" width="38" height="46" rx="3" fill="#dde8e1"/>
+          <rect x="340" y="146" width="38" height="32" rx="3" fill="#2e5c47"/>
+          <rect x="386" y="120" width="38" height="58" rx="3" fill="#f0ddd4"/>
+          <rect x="432" y="138" width="34" height="40" rx="3" fill="#b0492a"/>
+          <rect x="294" y="196" width="172" height="6" rx="3" fill="#ded6c6"/>
+          <rect x="294" y="209" width="126" height="6" rx="3" fill="#ded6c6"/>
+          <rect x="294" y="222" width="152" height="6" rx="3" fill="#ded6c6"/>
+        </g>
+
+        <!-- view B: what an agent reads -->
+        <g opacity="0">
+          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.42;.5;.92;1" dur="9s" repeatCount="indefinite"/>
+          <rect x="294" y="58" width="9" height="9" rx="2" fill="#b0492a"/>
+          <text x="311" y="67" font-family="'Spline Sans Mono',monospace" font-size="12" fill="#26221b">Overview</text>
+          <rect x="308" y="84" width="9" height="9" rx="2" fill="#c08a2d"/>
+          <text x="325" y="93" font-family="'Spline Sans Mono',monospace" font-size="12" fill="#5c554a">The numbers</text>
+          <rect x="308" y="110" width="9" height="9" rx="2" fill="#c08a2d"/>
+          <text x="325" y="119" font-family="'Spline Sans Mono',monospace" font-size="12" fill="#5c554a">Pricing</text>
+          <rect x="322" y="136" width="9" height="9" rx="2" fill="#d9d1c2"/>
+          <text x="339" y="145" font-family="'Spline Sans Mono',monospace" font-size="12" fill="#5c554a">Tiers</text>
+          <rect x="322" y="162" width="9" height="9" rx="2" fill="#d9d1c2"/>
+          <text x="339" y="171" font-family="'Spline Sans Mono',monospace" font-size="12" fill="#5c554a">Assumptions</text>
+          <rect x="294" y="188" width="9" height="9" rx="2" fill="#b0492a"/>
+          <text x="311" y="197" font-family="'Spline Sans Mono',monospace" font-size="12" fill="#26221b">Risks</text>
+          <rect x="294" y="214" width="9" height="9" rx="2" fill="#b0492a"/>
+          <text x="311" y="223" font-family="'Spline Sans Mono',monospace" font-size="12" fill="#26221b">What next</text>
+        </g>
+
+        <!-- swapping caption -->
+        <text x="380" y="276" text-anchor="middle" font-family="Fraunces,serif" font-size="16" font-weight="600" fill="#2e5c47">
+          what you see
+          <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;.42;.5;.92;1" dur="9s" repeatCount="indefinite"/>
+        </text>
+        <text x="380" y="276" text-anchor="middle" font-family="Fraunces,serif" font-size="16" font-weight="600" fill="#b0492a" opacity="0">
+          what your agent reads
+          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.42;.5;.92;1" dur="9s" repeatCount="indefinite"/>
+        </text>
+        <text x="380" y="304" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="14" fill="#5c554a">one file · not a copy, not an export</text>
+      </svg>
+    </div>
+    <figcaption><b>Same page, two ways in.</b> You never hand your agent a summary of the thing you're both looking at.</figcaption>
+  </figure>
+
+  <!-- ============ 2 ============ -->
+  <h2>Now add a second person — and their agent</h2>
+  <p>Four of us in the room: you, your agent, them, their agent. That's six possible lines of communication. Watch which ones already exist.</p>
+
+  <figure>
+    <div class="fig">
+      <svg viewBox="0 0 760 372" role="img" aria-label="Four participants at the corners — you, your agent, them, their agent — connected by six lines. Five fade to grey; the line from you to their agent stays gold and is marked new.">
+        <!-- edges (drawn under the nodes) -->
+        <!-- you <-> your agent -->
+        <path d="M105,86 L105,282" stroke="#c9c0b0" stroke-width="3" fill="none" stroke-dasharray="196" stroke-dashoffset="0">
+          <animate attributeName="stroke-dashoffset" from="196" to="0" dur="0.5s" begin="0.2s" fill="freeze"/>
+          <animate attributeName="stroke" from="#5c554a" to="#c9c0b0" dur="0.8s" begin="3.6s" fill="freeze"/>
+        </path>
+        <!-- them <-> their agent -->
+        <path d="M655,86 L655,282" stroke="#c9c0b0" stroke-width="3" fill="none" stroke-dasharray="196" stroke-dashoffset="0">
+          <animate attributeName="stroke-dashoffset" from="196" to="0" dur="0.5s" begin="0.5s" fill="freeze"/>
+          <animate attributeName="stroke" from="#5c554a" to="#c9c0b0" dur="0.8s" begin="3.6s" fill="freeze"/>
+        </path>
+        <!-- you <-> them -->
+        <path d="M192,58 L568,58" stroke="#c9c0b0" stroke-width="3" fill="none" stroke-dasharray="376" stroke-dashoffset="0">
+          <animate attributeName="stroke-dashoffset" from="376" to="0" dur="0.6s" begin="0.8s" fill="freeze"/>
+          <animate attributeName="stroke" from="#2e5c47" to="#c9c0b0" dur="0.8s" begin="3.6s" fill="freeze"/>
+        </path>
+        <!-- your agent <-> their agent -->
+        <path d="M192,310 L568,310" stroke="#c9c0b0" stroke-width="3" fill="none" stroke-dasharray="376" stroke-dashoffset="0">
+          <animate attributeName="stroke-dashoffset" from="376" to="0" dur="0.6s" begin="1.1s" fill="freeze"/>
+          <animate attributeName="stroke" from="#5c554a" to="#c9c0b0" dur="0.8s" begin="3.6s" fill="freeze"/>
+        </path>
+        <!-- your agent -> them -->
+        <path d="M192,296 L568,72" stroke="#c9c0b0" stroke-width="3" fill="none" stroke-dasharray="437" stroke-dashoffset="0">
+          <animate attributeName="stroke-dashoffset" from="437" to="0" dur="0.6s" begin="1.4s" fill="freeze"/>
+          <animate attributeName="stroke" from="#2e5c47" to="#c9c0b0" dur="0.8s" begin="3.6s" fill="freeze"/>
+        </path>
+        <!-- you -> their agent : THE NEW ONE -->
+        <path d="M192,72 L568,296" stroke="#c08a2d" stroke-width="5" fill="none" stroke-dasharray="437" stroke-dashoffset="0" stroke-linecap="round">
+          <animate attributeName="stroke-dashoffset" from="437" to="0" dur="0.7s" begin="1.7s" fill="freeze"/>
+          <animate attributeName="stroke-width" values="5;7;5" dur="2.2s" begin="4.2s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- the crossed-out one -->
+        <g opacity="1">
+          <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="3.9s" fill="freeze"/>
+          <path d="M366,296 L394,324 M394,296 L366,324" stroke="#b0492a" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <!-- nodes -->
+        <rect x="20" y="32" width="172" height="54" rx="14" fill="#fffdf8" stroke="#2e5c47" stroke-width="2"/>
+        <text x="106" y="65" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#26221b">You</text>
+        <rect x="568" y="32" width="172" height="54" rx="14" fill="#fffdf8" stroke="#2e5c47" stroke-width="2"/>
+        <text x="654" y="65" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#26221b">Them</text>
+        <rect x="20" y="282" width="172" height="54" rx="14" fill="#fffdf8" stroke="#b0492a" stroke-width="2"/>
+        <text x="106" y="315" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#26221b">Your agent</text>
+        <rect x="568" y="282" width="172" height="54" rx="14" fill="#fffdf8" stroke="#b0492a" stroke-width="2"/>
+        <text x="654" y="315" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#26221b">Their agent</text>
+
+        <!-- the page in the middle -->
+        <rect x="316" y="150" width="128" height="70" rx="12" fill="#fffdf8" stroke="#c08a2d" stroke-width="2.5"/>
+        <text x="380" y="180" text-anchor="middle" font-family="Fraunces,serif" font-size="15" font-weight="600" fill="#26221b">the page</text>
+        <text x="380" y="200" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="12.5" fill="#5c554a">everything goes through it</text>
+
+        <!-- gold label -->
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="2.5s" fill="freeze"/>
+          <rect x="196" y="238" width="132" height="26" rx="13" fill="#c08a2d"/>
+          <text x="262" y="256" text-anchor="middle" font-family="'Spline Sans Mono',monospace" font-size="12" font-weight="700" fill="#fff">THE NEW ONE</text>
+        </g>
+      </svg>
+    </div>
+    <div class="keys">
+      <span class="k"><i style="border-color:#c9c0b0"></i>you ↔ your agent</span>
+      <span class="k"><i style="border-color:#c9c0b0"></i>them ↔ their agent</span>
+      <span class="k"><i style="border-color:#c9c0b0"></i>you ↔ them — that's just a conversation</span>
+      <span class="k"><i style="border-color:#c9c0b0"></i>your agent → them — that's just sharing a link</span>
+      <span class="k no"><i style="border-color:#c9c0b0"></i>agent ↔ agent</span>
+      <span class="k new"><i style="border-color:#c08a2d"></i>you → <em>their</em> agent</span>
+    </div>
+    <figcaption><b>Five of these already happen every day.</b> One doesn't exist at all: a note from you turning into work inside <em>someone else's</em> agent, without a meeting to carry it there. That's the thing being built.</figcaption>
+  </figure>
+
+  <p>Laid out as a grid, the four lines that cross between you and them:</p>
+
+  <div class="g22">
+    <div class="ax"></div>
+    <div class="ax">it reaches <b>them</b><br>(a person)</div>
+    <div class="ax">it reaches <b>their agent</b></div>
+
+    <div class="ay">you<br>say it</div>
+    <div class="c ok"><strong>A conversation</strong><span>Slack, a call, a comment. Works today.</span></div>
+    <div class="c hot"><strong>Doesn't exist</strong><span>Your note becoming work inside their agent — with nobody in a meeting repeating it out loud.</span><span class="tagn">THE WHOLE IDEA</span></div>
+
+    <div class="ay">your agent<br>made it</div>
+    <div class="c ok"><strong>A shared link</strong><span>They open a page and read it. Works today.</span></div>
+    <div class="c no"><strong>Agent to agent</strong><span>Never happens. Only one of them can write to the page, and old versions are frozen — so there's nothing for them to fight over.</span></div>
+  </div>
+  <p class="big" style="margin-top:22px">Three of the four squares are already solved. <b>One square is the product.</b></p>
+
+  <!-- ============ 3 ============ -->
+  <h2>Your question was about the bottom line — the crossed-out one</h2>
+  <p>Two agents can't diverge over this page. Only one of them can write to it. Every version is frozen the moment it's made, so there's nothing to merge. And a published page is an <em>output</em> — nothing reads it back to decide anything.</p>
+  <p class="big">There's no argument between the agents, because there's nothing they both hold.</p>
+
+  <!-- ============ 4 ============ -->
+  <h2>The real gap is on the left edge of that square</h2>
+  <p>Between you and your own agent. It made a few hundred small decisions writing this thing. You wrote none of them and you've read maybe three.</p>
+
+  <figure>
+    <div class="fig">
+      <svg viewBox="0 0 760 260" role="img" aria-label="A person with a thought bubble labelled what you meant, an agent with a page labelled what it made, and a pulsing gap between them">
+        <!-- person + thought -->
+        <circle cx="104" cy="152" r="24" fill="#dde8e1" stroke="#2e5c47" stroke-width="2"/>
+        <path d="M66,212 Q104,172 142,212" fill="#dde8e1" stroke="#2e5c47" stroke-width="2"/>
+        <ellipse cx="176" cy="72" rx="86" ry="42" fill="#f0f7f4" stroke="#2e5c47" stroke-width="2"/>
+        <circle cx="122" cy="112" r="7" fill="#f0f7f4" stroke="#2e5c47" stroke-width="1.6"/>
+        <circle cx="110" cy="126" r="4" fill="#f0f7f4" stroke="#2e5c47" stroke-width="1.4"/>
+        <text x="176" y="68" text-anchor="middle" font-family="Fraunces,serif" font-size="15" font-weight="600" fill="#26221b">what you</text>
+        <text x="176" y="88" text-anchor="middle" font-family="Fraunces,serif" font-size="15" font-weight="600" fill="#26221b">actually meant</text>
+        <text x="104" y="242" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="14" fill="#5c554a">You</text>
+
+        <!-- agent + page -->
+        <rect x="600" y="126" width="92" height="70" rx="16" fill="#f0ddd4" stroke="#b0492a" stroke-width="2"/>
+        <circle cx="626" cy="156" r="5" fill="#b0492a"/><circle cx="666" cy="156" r="5" fill="#b0492a"/>
+        <path d="M626,178 Q646,188 666,178" stroke="#b0492a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <text x="646" y="242" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="14" fill="#5c554a">Your agent</text>
+        <rect x="536" y="30" width="176" height="84" rx="11" fill="#fffdf8" stroke="#b0492a" stroke-width="2"/>
+        <rect x="554" y="48" width="76" height="9" rx="3" fill="#26221b"/>
+        <rect x="554" y="66" width="140" height="5" rx="2.5" fill="#ded6c6"/>
+        <rect x="554" y="78" width="122" height="5" rx="2.5" fill="#ded6c6"/>
+        <rect x="554" y="90" width="134" height="5" rx="2.5" fill="#ded6c6"/>
+        <text x="624" y="130" text-anchor="middle" font-family="Fraunces,serif" font-size="15" font-weight="600" fill="#26221b">what it made</text>
+
+        <!-- the gap -->
+        <path d="M262,96 L262,196" stroke="#b0492a" stroke-width="2" stroke-dasharray="6 5"/>
+        <path d="M494,96 L494,196" stroke="#b0492a" stroke-width="2" stroke-dasharray="6 5"/>
+        <text x="378" y="132" text-anchor="middle" font-family="Fraunces,serif" font-size="62" font-weight="700" fill="#b0492a">
+          ?
+          <animate attributeName="opacity" values=".28;1;.28" dur="2.6s" repeatCount="indefinite"/>
+        </text>
+        <text x="378" y="168" text-anchor="middle" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#b0492a">nobody checked this</text>
+        <text x="378" y="192" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="14" fill="#5c554a">and there's no way to tell from the outside</text>
+      </svg>
+    </div>
+    <figcaption><b>The page isn't wrong. It's unchecked.</b> Those look exactly the same from where you're standing — which is the entire problem.</figcaption>
+  </figure>
+
+  <p>And this has its own loop, running inside just you and your agent — before anyone else has seen a thing.</p>
+
+  <figure>
+    <div class="fig">
+      <svg viewBox="0 0 760 320" role="img" aria-label="A loop between one person and their own agent: you mean something, the agent makes a version, you spot the one section that misses the point, it redoes that section, and the gap narrows each time round">
+        <path id="loop-pair" d="M 246,72 H 514 Q 566,72 566,124 V 196 Q 566,248 514,248 H 246 Q 194,248 194,196 V 124 Q 194,72 246,72 Z"
+              fill="none" stroke="#ded6c6" stroke-width="2.5"/>
+
+        <circle r="8.5" fill="#b0492a">
+          <animateMotion dur="10s" repeatCount="indefinite"><mpath href="#loop-pair" xlink:href="#loop-pair"/></animateMotion>
+        </circle>
+        <circle r="15" fill="#b0492a" opacity=".2">
+          <animateMotion dur="10s" repeatCount="indefinite"><mpath href="#loop-pair" xlink:href="#loop-pair"/></animateMotion>
+        </circle>
+
+        <!-- stations -->
+        <circle cx="280" cy="72" r="6.5" fill="#2e5c47"/>
+        <text x="280" y="50" text-anchor="middle" font-family="Fraunces,serif" font-size="14.5" font-weight="600" fill="#26221b">you mean something</text>
+        <text x="280" y="32" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="12" fill="#5c554a">mostly still in your head</text>
+
+        <circle cx="480" cy="72" r="6.5" fill="#b0492a"/>
+        <text x="480" y="50" text-anchor="middle" font-family="Fraunces,serif" font-size="14.5" font-weight="600" fill="#26221b">it makes a version</text>
+        <text x="480" y="32" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="12" fill="#5c554a">forty sections, in one go</text>
+
+        <circle cx="566" cy="160" r="6.5" fill="#c08a2d"/>
+        <text x="584" y="150" font-family="Fraunces,serif" font-size="14.5" font-weight="600" fill="#26221b">one section</text>
+        <text x="584" y="169" font-family="Fraunces,serif" font-size="14.5" font-weight="600" fill="#26221b">misses the point</text>
+        <text x="584" y="188" font-family="'Albert Sans',sans-serif" font-size="12" fill="#5c554a">you say so, on that section</text>
+
+        <circle cx="480" cy="248" r="6.5" fill="#b0492a"/>
+        <text x="480" y="274" text-anchor="middle" font-family="Fraunces,serif" font-size="14.5" font-weight="600" fill="#26221b">it redoes that bit</text>
+        <text x="480" y="292" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="12" fill="#5c554a">not the whole document</text>
+
+        <circle cx="280" cy="248" r="6.5" fill="#2e5c47"/>
+        <text x="280" y="274" text-anchor="middle" font-family="Fraunces,serif" font-size="14.5" font-weight="600" fill="#26221b">now it's closer</text>
+        <text x="280" y="292" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="12" fill="#5c554a">and you can see why</text>
+
+        <!-- narrowing gap in the middle -->
+        <text x="380" y="132" text-anchor="middle" font-family="'Spline Sans Mono',monospace" font-size="11" letter-spacing=".12em" fill="#5c554a">THE GAP</text>
+        <rect x="290" y="146" width="180" height="16" rx="8" fill="#efe9de"/>
+        <rect x="290" y="146" width="180" height="16" rx="8" fill="#b0492a">
+          <animate attributeName="width" values="180;180;118;118;62;62;26;26;180" keyTimes="0;.1;.2;.35;.45;.62;.72;.9;1" dur="10s" repeatCount="indefinite"/>
+        </rect>
+        <text x="380" y="188" text-anchor="middle" font-family="Fraunces,serif" font-size="15.5" font-weight="600" fill="#26221b">closes a bit each time round</text>
+        <text x="380" y="210" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="12.5" fill="#5c554a">nobody else has seen the page yet</text>
+      </svg>
+    </div>
+    <figcaption><b>Same move, one person earlier.</b> Commenting on a section isn't only for sending things to other people — it's how you and your own agent stop misreading each other. The version you eventually share is one somebody has actually checked.</figcaption>
+  </figure>
+
+  <!-- ============ 5 ============ -->
+  <h2>So it isn't a referee. It's a spotlight.</h2>
+  <p>Here's forty sections your agent just wrote. One of them carries an assumption everything else stands on. Right now they all look identical, so you read all forty or you read none.</p>
+
+  <figure>
+    <div class="fig">
+      <svg viewBox="0 0 760 268" role="img" aria-label="A grid of forty identical blocks representing a generated document; one lights up gold and gets a marker attached to it">
+        <g fill="#e5ded0">
+          <rect x="54" y="72" width="58" height="34" rx="4"/><rect x="120" y="72" width="58" height="34" rx="4"/><rect x="186" y="72" width="58" height="34" rx="4"/><rect x="252" y="72" width="58" height="34" rx="4"/><rect x="318" y="72" width="58" height="34" rx="4"/><rect x="384" y="72" width="58" height="34" rx="4"/><rect x="516" y="72" width="58" height="34" rx="4"/><rect x="582" y="72" width="58" height="34" rx="4"/><rect x="648" y="72" width="58" height="34" rx="4"/>
+          <rect x="54" y="114" width="58" height="34" rx="4"/><rect x="120" y="114" width="58" height="34" rx="4"/><rect x="186" y="114" width="58" height="34" rx="4"/><rect x="252" y="114" width="58" height="34" rx="4"/><rect x="318" y="114" width="58" height="34" rx="4"/><rect x="384" y="114" width="58" height="34" rx="4"/><rect x="450" y="114" width="58" height="34" rx="4"/><rect x="516" y="114" width="58" height="34" rx="4"/><rect x="582" y="114" width="58" height="34" rx="4"/><rect x="648" y="114" width="58" height="34" rx="4"/>
+          <rect x="54" y="156" width="58" height="34" rx="4"/><rect x="120" y="156" width="58" height="34" rx="4"/><rect x="186" y="156" width="58" height="34" rx="4"/><rect x="252" y="156" width="58" height="34" rx="4"/><rect x="318" y="156" width="58" height="34" rx="4"/><rect x="384" y="156" width="58" height="34" rx="4"/><rect x="450" y="156" width="58" height="34" rx="4"/><rect x="516" y="156" width="58" height="34" rx="4"/><rect x="582" y="156" width="58" height="34" rx="4"/><rect x="648" y="156" width="58" height="34" rx="4"/>
+          <rect x="54" y="198" width="58" height="34" rx="4"/><rect x="120" y="198" width="58" height="34" rx="4"/><rect x="186" y="198" width="58" height="34" rx="4"/><rect x="252" y="198" width="58" height="34" rx="4"/><rect x="318" y="198" width="58" height="34" rx="4"/><rect x="384" y="198" width="58" height="34" rx="4"/><rect x="450" y="198" width="58" height="34" rx="4"/><rect x="516" y="198" width="58" height="34" rx="4"/><rect x="582" y="198" width="58" height="34" rx="4"/><rect x="648" y="198" width="58" height="34" rx="4"/>
+        </g>
+
+        <!-- the one that matters -->
+        <rect x="450" y="72" width="58" height="34" rx="4" fill="#e5ded0">
+          <animate attributeName="fill" from="#e5ded0" to="#c08a2d" dur="0.7s" begin="1.4s" fill="freeze"/>
+        </rect>
+        <rect x="446" y="68" width="66" height="42" rx="7" fill="none" stroke="#c08a2d" stroke-width="2.5" opacity="0">
+          <animate attributeName="opacity" values="0;1;.35;1;.35;1" keyTimes="0;.2;.4;.6;.8;1" dur="3.2s" begin="1.4s" fill="freeze"/>
+        </rect>
+
+        <!-- pointer + label -->
+        <g opacity="0">
+          <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="2.4s" fill="freeze"/>
+          <path d="M479,64 L479,42 L596,42" stroke="#c08a2d" stroke-width="2" fill="none"/>
+          <circle cx="479" cy="64" r="3.5" fill="#c08a2d"/>
+          <text x="604" y="47" font-family="'Albert Sans',sans-serif" font-size="14" font-weight="600" fill="#8a6317">everything rests on this</text>
+        </g>
+
+        <text x="54" y="34" font-family="Fraunces,serif" font-size="17" font-weight="600" fill="#26221b">40 sections your agent just wrote</text>
+        <text x="54" y="258" font-family="'Albert Sans',sans-serif" font-size="14" fill="#5c554a">all equally important-looking — until one of them has a name and an address</text>
+      </svg>
+    </div>
+    <figcaption><b>You mark that one block.</b> The mark sticks to that block — so when the agent rewrites the section, your note is still attached to it, not floating somewhere in a comment thread nobody can find.</figcaption>
+  </figure>
+
+  <!-- ============ 5b ============ -->
+  <h2>You comment on a section, not on the document</h2>
+  <p>That's the bit that makes it work. Your note is attached to <em>that part</em> — so when the agent rewrites it, the note is still sitting there on the new version. It doesn't come loose.</p>
+
+  <figure>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" role="img" aria-label="A single section of a page with a comment attached to it. The section's contents are rewritten, and the comment stays attached to the new version.">
+        <!-- the section card -->
+        <rect x="52" y="46" width="404" height="150" rx="10" fill="#fffdf8" stroke="#c08a2d" stroke-width="2.5"/>
+        <text x="70" y="38" font-family="'Spline Sans Mono',monospace" font-size="12" letter-spacing="1" fill="#8a6317">ONE SECTION OF THE PAGE</text>
+
+        <!-- version A of the contents -->
+        <g>
+          <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;.4;.48;.92;1" dur="10s" repeatCount="indefinite"/>
+          <rect x="76" y="70" width="112" height="11" rx="3" fill="#26221b"/>
+          <rect x="76" y="98" width="352" height="7" rx="3.5" fill="#ded6c6"/>
+          <rect x="76" y="114" width="310" height="7" rx="3.5" fill="#ded6c6"/>
+          <rect x="76" y="130" width="336" height="7" rx="3.5" fill="#ded6c6"/>
+          <rect x="76" y="146" width="204" height="7" rx="3.5" fill="#ded6c6"/>
+          <rect x="76" y="168" width="76" height="18" rx="9" fill="#efe9de"/>
+          <text x="114" y="181" text-anchor="middle" font-family="'Spline Sans Mono',monospace" font-size="11" fill="#5c554a">version 3</text>
+        </g>
+
+        <!-- version B of the contents -->
+        <g opacity="0">
+          <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.4;.48;.92;1" dur="10s" repeatCount="indefinite"/>
+          <rect x="76" y="70" width="112" height="11" rx="3" fill="#26221b"/>
+          <rect x="76" y="98" width="298" height="7" rx="3.5" fill="#cfe0d6"/>
+          <rect x="76" y="114" width="352" height="7" rx="3.5" fill="#cfe0d6"/>
+          <rect x="76" y="130" width="248" height="7" rx="3.5" fill="#cfe0d6"/>
+          <rect x="76" y="146" width="322" height="7" rx="3.5" fill="#cfe0d6"/>
+          <rect x="76" y="168" width="76" height="18" rx="9" fill="#dde8e1"/>
+          <text x="114" y="181" text-anchor="middle" font-family="'Spline Sans Mono',monospace" font-size="11" font-weight="600" fill="#2e5c47">version 4</text>
+          <text x="168" y="181" font-family="'Albert Sans',sans-serif" font-size="12.5" fill="#2e5c47">rewritten by the agent</text>
+        </g>
+
+        <!-- the comment — never moves -->
+        <path d="M456,112 L520,112" stroke="#b0492a" stroke-width="2" stroke-dasharray="4 4"/>
+        <circle cx="456" cy="112" r="5" fill="#b0492a"/>
+        <path d="M520,74 h188 a10,10 0 0 1 10,10 v56 a10,10 0 0 1 -10,10 h-176 l-12,16 v-16 a10,10 0 0 1 -10,-10 v-56 a10,10 0 0 1 10,-10 z"
+              fill="#f0ddd4" stroke="#b0492a" stroke-width="2"/>
+        <text x="538" y="98" font-family="'Albert Sans',sans-serif" font-size="13.5" font-weight="600" fill="#26221b">“this assumes</text>
+        <text x="538" y="116" font-family="'Albert Sans',sans-serif" font-size="13.5" font-weight="600" fill="#26221b">nobody churns —</text>
+        <text x="538" y="134" font-family="'Albert Sans',sans-serif" font-size="13.5" font-weight="600" fill="#26221b">is that right?”</text>
+
+        <text x="620" y="180" text-anchor="middle" font-family="Fraunces,serif" font-size="15" font-weight="600" fill="#b0492a">
+          still attached
+          <animate attributeName="opacity" values=".35;1;.35" dur="3s" repeatCount="indefinite"/>
+        </text>
+
+        <text x="254" y="228" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="14" fill="#5c554a">the words changed · the note stayed on them</text>
+      </svg>
+    </div>
+    <figcaption><b>Comment on the paragraph, not on the file.</b> A normal document comment dies the moment the text underneath it gets rewritten. Here it survives the rewrite — which is the only reason the back-and-forth below can work at all.</figcaption>
+  </figure>
+
+  <!-- ============ 6 ============ -->
+  <h2>And that comment is how the two of you talk</h2>
+  <p>No call, no notetaker, no re-explaining. The note travels; the page keeps the receipt.</p>
+
+  <figure>
+    <div class="fig">
+      <svg viewBox="0 0 760 300" role="img" aria-label="A loop: you mark one part, it becomes a short note, they hand it to their agent, the agent rewrites that part, and you see exactly what changed">
+        <path id="loop-pe" d="M 130,74 H 560 Q 620,74 620,146 Q 620,218 560,218 H 130 Q 70,218 70,146 Q 70,74 130,74 Z"
+              fill="none" stroke="#ded6c6" stroke-width="2.5"/>
+
+        <!-- travelling dot -->
+        <circle r="9" fill="#c08a2d">
+          <animateMotion dur="11s" repeatCount="indefinite" rotate="auto">
+            <mpath href="#loop-pe" xlink:href="#loop-pe"/>
+          </animateMotion>
+        </circle>
+        <circle r="16" fill="#c08a2d" opacity=".22">
+          <animateMotion dur="11s" repeatCount="indefinite"><mpath href="#loop-pe" xlink:href="#loop-pe"/></animateMotion>
+        </circle>
+
+        <!-- stations -->
+        <circle cx="160" cy="74" r="7" fill="#2e5c47"/>
+        <text x="160" y="52" text-anchor="middle" font-family="Fraunces,serif" font-size="15" font-weight="600" fill="#26221b">you mark one part</text>
+        <text x="160" y="34" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="12.5" fill="#5c554a">of the page you were sent</text>
+
+        <circle cx="520" cy="74" r="7" fill="#2e5c47"/>
+        <text x="520" y="52" text-anchor="middle" font-family="Fraunces,serif" font-size="15" font-weight="600" fill="#26221b">it becomes a short note</text>
+        <text x="520" y="34" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="12.5" fill="#5c554a">that points at exactly that part</text>
+
+        <circle cx="620" cy="146" r="7" fill="#b0492a"/>
+        <text x="638" y="142" font-family="Fraunces,serif" font-size="15" font-weight="600" fill="#26221b">they hand it</text>
+        <text x="638" y="162" font-family="Fraunces,serif" font-size="15" font-weight="600" fill="#26221b">to their agent</text>
+
+        <circle cx="520" cy="218" r="7" fill="#b0492a"/>
+        <text x="520" y="244" text-anchor="middle" font-family="Fraunces,serif" font-size="15" font-weight="600" fill="#26221b">it rewrites that part</text>
+        <text x="520" y="262" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="12.5" fill="#5c554a">the old version stays, untouched</text>
+
+        <circle cx="160" cy="218" r="7" fill="#c08a2d"/>
+        <text x="160" y="244" text-anchor="middle" font-family="Fraunces,serif" font-size="15" font-weight="600" fill="#26221b">you see what changed</text>
+        <text x="160" y="262" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="12.5" fill="#5c554a">before and after, on your note</text>
+
+        <text x="345" y="140" text-anchor="middle" font-family="Fraunces,serif" font-size="19" font-weight="600" fill="#26221b">no meeting</text>
+        <text x="345" y="166" text-anchor="middle" font-family="'Albert Sans',sans-serif" font-size="13.5" fill="#5c554a">nobody re-explains anything to anybody</text>
+      </svg>
+    </div>
+    <figcaption><b>The last step is the one people miss.</b> You don't get told "done" — you get shown what your note actually caused.</figcaption>
+  </figure>
+
+  <!-- ============ punch ============ -->
+  <div class="punch">
+    <p>So the answer to your question is: <em>nothing needs to resolve a fight between two agents</em>, because they were never holding the same thing.</p>
+    <p>The fight worth solving is between a person and their own agent — and software can't settle that either. What it can do is stop hiding where to look.</p>
+  </div>
+
+  <div class="note">
+    <p><b>The part I don't have an answer to yet.</b> When something <em>changes</em>, it's easy to point at what to look at — you show what moved. On a brand new document, nothing points anywhere. The agent made two hundred decisions and doesn't know which three mattered. That one's still open.</p>
+  </div>
+
+  <footer>An explainer · 2026-07-29</footer>
+</div>
+<script>
+/* Honour "reduce motion": CSS keyframes are handled in the stylesheet, but SVG's own
+   animation engine ignores CSS — so pause it explicitly. Every figure's resting state
+   is the meaningful one, so nothing is lost when motion is off. */
+(function(){
+  try{
+    var q = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+    if(!q) return;
+    var apply = function(){
+      var svgs = document.querySelectorAll('svg'), i;
+      for(i=0;i<svgs.length;i++){
+        if(typeof svgs[i].pauseAnimations !== 'function') continue;
+        if(q.matches){ svgs[i].setCurrentTime(12); svgs[i].pauseAnimations(); }
+        else { svgs[i].unpauseAnimations(); }
+      }
+    };
+    apply();
+    if(q.addEventListener) q.addEventListener('change', apply);
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
