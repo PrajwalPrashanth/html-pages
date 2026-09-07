@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prajwalprashanth.github.io/html-pages/amita/sitemap.xml

@@ -5,456 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Amita Dongre — Content Strategist</title>
 <!-- v5 — v4 visuals + CONTENT-v2 copy. Original cartoon cat &amp; mouse, drawn for this page. -->
-<meta name="description" content="Amita Dongre, content strategist. Six episodes, 2018–2026: insurance, cookware, steel, skincare, whisky, wealth — each one with the decision behind it, and what the client sent back.">
+<meta name="description" content="Amita Dongre, content strategist. Eighteen episodes, 2018–2026: insurance, cookware, steel, skincare, whisky, wealth — each with the decision behind it and the impact.">
 <meta property="og:title" content="Amita Dongre — Content Strategist">
 <meta property="og:description" content="Nobody wakes up wanting to read an ad. So I start with what people already believe — and say it back to them well enough that they forward it.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/og.jpg">
+<meta property="og:image" content="assets/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://prajwalprashanth.github.io/html-pages/amita/">
+<link rel="canonical" href="https://prajwalprashanth.github.io/html-pages/amita/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amita Dongre — Content Strategist">
+<meta name="twitter:description" content="Nobody wakes up wanting to read an ad. So I start with what people already believe — and say it back to them well enough that they forward it.">
+<meta name="twitter:image" content="assets/og/home.jpg">
 <meta name="theme-color" content="#FBF5E9">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Lilita+One&family=Work+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-/* ---------- tokens ---------- */
-:root{
-  --cream:#FBF5E9; --cream2:#F1DDB4; --mustard:#E3AE3C; --teal:#2F6E63; --mint:#7EC6B4;
-  --cherry:#D2372C; --orange:#E8702A; --slate:#7E8FA6; --cocoa:#4A2E19; --ink:#211A12; --paper:#FFFDF7;
-  --sky:#8FCDE8; --wood:#8A5A2B;
-  --display:'Lilita One', 'Arial Black', Impact, sans-serif;
-  --body:'Work Sans', 'Helvetica Neue', Arial, sans-serif;
-  --wordmark:'Shrikhand', 'Lilita One', Impact, serif;
-  --line:3px; --shadow:6px 6px 0 var(--ink); --shadow-sm:4px 4px 0 var(--ink);
-  --maxw:1160px;
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Amita Dongre",
+  "jobTitle": "Content Strategist",
+  "url": "https://prajwalprashanth.github.io/html-pages/amita/",
+  "email": "mailto:amitadongre.0303@gmail.com",
+  "sameAs": ["https://www.linkedin.com/in/amitadongre03/"]
 }
-*{box-sizing:border-box}
-@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
-html,body{overflow-x:clip}
-body{margin:0;background:var(--cream);color:var(--cocoa);font-family:var(--body);font-size:17px;line-height:1.55;
-  background-image:radial-gradient(rgba(74,46,25,.045) 1px, transparent 1.4px);background-size:14px 14px}
-img{max-width:100%;display:block}
-a{color:var(--teal)}
-h1,h2,h3,h4{font-family:var(--display);font-weight:400;color:var(--ink);line-height:1.02;margin:0;letter-spacing:.005em}
-p{margin:0 0 1em}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-.sr{position:absolute;left:-9999px}
-.skip{position:absolute;left:8px;top:-60px;z-index:100;background:var(--mustard);border:var(--line) solid var(--ink);padding:8px 12px;font-weight:700;color:var(--ink)}
-.skip:focus{top:8px}
-:focus-visible{outline:4px solid var(--cherry);outline-offset:3px}
-
-/* ---------- buttons ---------- */
-.btn{display:inline-block;font-family:var(--display);font-size:1.15rem;padding:.7em 1.3em;border:var(--line) solid var(--ink);
-  background:var(--mustard);color:var(--ink);text-decoration:none;box-shadow:var(--shadow);transform:rotate(-1deg);
-  transition:transform .15s cubic-bezier(.68,-0.55,.27,1.55),box-shadow .15s;min-height:44px}
-.btn:hover{transform:rotate(0) translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
-.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
-.btn.alt{background:var(--paper);transform:rotate(1deg)}
-
-/* ---------- nav ---------- */
-nav.top{position:sticky;top:0;z-index:50;background:rgba(251,245,233,.94);backdrop-filter:blur(6px);border-bottom:var(--line) solid var(--ink)}
-nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px;flex-wrap:wrap}
-nav.top .brand{font-family:var(--display);font-size:1.3rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}
-nav.top .brand svg{flex:none}
-nav.top .navwrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-nav.top ul{list-style:none;display:flex;gap:2px;margin:0;padding:0;flex-wrap:wrap}
-nav.top li a{display:flex;align-items:center;min-height:44px;font-weight:700;font-size:.92rem;color:var(--cocoa);text-decoration:none;padding:6px 10px;border:2px solid transparent;border-radius:999px}
-nav.top li a:hover{border-color:var(--ink);background:var(--paper)}
-
-/* ---------- title card (hero) ---------- */
-.hero{position:relative;min-height:88vh;display:grid;place-items:center;padding:56px 24px 230px;overflow:hidden;
-  background:
-    radial-gradient(ellipse at 50% 42%, #F9EFD8 0 38%, transparent 39%),
-    repeating-radial-gradient(circle at 50% 42%, transparent 0 22px, rgba(30,26,22,.06) 22px 24px),
-    var(--cream)}
-.hero .card{position:relative;text-align:center;max-width:900px;z-index:3}
-.hero .presents{font-family:var(--display);font-size:clamp(1rem,2vw,1.35rem);color:#A32820;display:inline-block;
-  transform:rotate(-3deg);border:var(--line) solid var(--ink);background:var(--paper);padding:.25em .9em;box-shadow:var(--shadow-sm);margin-bottom:22px}
-.hero h1{font-family:var(--wordmark);font-size:clamp(2.4rem,8.5vw,6.8rem);line-height:1;color:var(--ink);
-  text-shadow:5px 5px 0 var(--mustard);margin:0 0 18px;transform:rotate(-1deg);overflow-wrap:break-word}
-.hero .sub{font-family:var(--display);font-size:clamp(1.2rem,3vw,2.1rem);color:var(--teal);margin:0 auto 10px;max-width:22ch;line-height:1.1}
-.hero .lede{max-width:54ch;margin:0 auto 30px;font-size:1.1rem}
-.hero .lede p{margin:0 0 .75em}.hero .lede p:last-child{margin:0}
-.hero .ctas{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
-.hero .reel{position:absolute;left:50%;transform:translateX(-50%);bottom:14px;font-size:.85rem;font-weight:700;color:var(--cocoa);z-index:3;max-width:min(620px,54vw);text-align:center}
-.stars{position:absolute;inset:0;pointer-events:none;z-index:1}
-.stars svg{position:absolute}
-.prop-cheese{position:absolute}
-
-/* hero characters */
-.hero-cat{position:absolute;right:3%;bottom:0;width:min(250px,24vw);z-index:2;pointer-events:none}
-.hero-cat svg{width:100%;height:auto}
-.hero-cat .pupil{transform:translate(var(--px,0px),var(--py,0px));transition:transform .16s ease-out}
-.hole{position:absolute;left:5%;bottom:0;width:min(210px,22vw);z-index:2;text-decoration:none;display:block}
-.hole svg{width:100%;height:auto;display:block}
-.hole-label{position:absolute;left:50%;top:-42px;transform:translateX(-50%) rotate(-3deg);font-family:var(--display);
-  font-size:.95rem;line-height:1.1;text-align:center;color:var(--ink);background:var(--paper);border:var(--line) solid var(--ink);padding:.15em .6em;width:max-content;max-width:min(180px,42vw)}
-.hole:hover .hole-label{background:var(--mustard)}
-
-@media (prefers-reduced-motion: no-preference){
-  .hole .mouse-peek{animation:peekOnce 1.5s .5s both cubic-bezier(.68,-0.55,.27,1.55)}
-  .hero-cat .cat-body{animation:cardCrouch 1s .2s both cubic-bezier(.68,-0.55,.27,1.55)}
-  .hero-cat .eyes{animation:eyesOpen .45s 1.15s both}
-  .hero-cat .cat-paws{animation:eyesOpen .45s 1.35s both}
-}
-@keyframes peekOnce{from{transform:translateY(78px)}to{transform:translateY(0)}}
-@keyframes cardCrouch{from{transform:translateY(120px)}to{transform:translateY(0)}}
-@keyframes eyesOpen{from{opacity:0;transform:scaleY(.1);transform-origin:center}to{opacity:1;transform:scaleY(1)}}
-
-/* ---------- section scaffolding ---------- */
-section{position:relative;padding:88px 0;scroll-margin-top:70px}
-main{display:block}
-.sec-title{display:flex;align-items:flex-end;gap:18px;margin-bottom:14px;flex-wrap:wrap}
-.sec-title h2{font-size:clamp(2rem,5vw,3.6rem)}
-.sec-title .chip{font-family:var(--display);font-size:1rem;border:var(--line) solid var(--ink);padding:.2em .7em;background:var(--mustard);
-  box-shadow:var(--shadow-sm);transform:rotate(-2deg)}
-.lede{font-size:1.15rem;max-width:62ch}
-.band{border-top:var(--line) solid var(--ink);border-bottom:var(--line) solid var(--ink)}
-.band.mint{background:var(--mint)}
-.band.mustard{background:var(--mustard)}
-.band.paper{background:var(--paper)}
-.band.sky{background:var(--sky)}
-
-/* ---------- chase strip (the cat-and-mouse divider) ---------- */
-.chase-band{position:relative;height:136px;overflow:hidden;background:var(--cream2);
-  border-top:var(--line) solid var(--ink);border-bottom:var(--line) solid var(--ink);
-  background-image:repeating-linear-gradient(90deg, rgba(138,90,43,.20) 0 2px, transparent 2px 74px)}
-.chase-band::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--wood);border-top:var(--line) solid var(--ink)}
-.runner{position:absolute;left:0;bottom:2px;will-change:transform}
-.runner-in{transform-origin:left bottom}
-.runner-svg{width:340px;height:auto;display:block}
-.chase-band .legs{transform:translateX(0)}
-@media (prefers-reduced-motion: no-preference){
-  .runner{animation:runacross 9s linear infinite}
-  .cat-legs{animation:catcycle .34s steps(3) infinite}
-  .mouse-legs{animation:mousecycle .26s steps(3) infinite}
-  .runner-in{animation:bob .34s steps(3) infinite}
-  .puff{animation:puffout 1.1s linear infinite}
-  .puff.p2{animation-delay:-.36s}
-  .puff.p3{animation-delay:-.72s}
-}
-.chase-band:hover .runner,.chase-band:hover .legs,.chase-band:hover .runner-in,.chase-band:hover .puff{animation-play-state:paused}
-@keyframes runacross{from{transform:translateX(-360px)}to{transform:translateX(102vw)}}
-@keyframes catcycle{from{transform:translateX(0)}to{transform:translateX(-330px)}}
-@keyframes mousecycle{from{transform:translateX(0)}to{transform:translateX(-168px)}}
-@keyframes bob{0%{transform:translateY(0)}33%{transform:translateY(-4px)}66%{transform:translateY(-1px)}100%{transform:translateY(0)}}
-@keyframes puffout{0%{opacity:.9;transform:scale(.5)}100%{opacity:0;transform:scale(1.5)}}
-
-/* ---------- chase strip (positioning panels) ---------- */
-.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:58px;position:relative}
-.panel{background:var(--paper);border:var(--line) solid var(--ink);box-shadow:var(--shadow);padding:26px 24px 24px;position:relative}
-.panel h3{font-size:1.32rem;margin-bottom:8px}
-.panel .beat{position:absolute;top:-18px;left:18px;font-family:var(--display);background:var(--cherry);color:#fff;border:var(--line) solid var(--ink);padding:.15em .7em;font-size:1rem;transform:rotate(-3deg)}
-.panel:nth-child(2) .beat{background:var(--teal)}
-.panel:nth-child(3) .beat{background:var(--mustard);color:var(--ink)}
-.panel p{margin:0}
-.panel:nth-child(1){transform:rotate(-1deg)}.panel:nth-child(3){transform:rotate(1deg)}
-.prints{position:absolute;left:0;right:0;top:-48px;height:34px;pointer-events:none}
-.prints svg{width:100%;height:100%}
-
-/* ---------- episodes ---------- */
-.episode{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:start;padding:64px 0;border-top:2px dashed rgba(30,26,22,.35)}
-.episode:first-of-type{border-top:0}
-.episode.flip{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
-.episode.flip .ep-text{order:2}
-.ep-text{position:static}
-.ep-head{position:relative;display:inline-block;margin-bottom:42px}
-.ep-head .burst{position:absolute;left:50%;top:50%;width:114px;height:114px;transform:translate(-50%,-50%) rotate(-6deg);z-index:0;pointer-events:none}
-.ep-num{position:relative;z-index:1;display:inline-block;font-family:var(--display);font-size:1.05rem;background:var(--ink);color:var(--cream);padding:.25em .8em;transform:rotate(-2deg)}
-.ep-text h3{font-size:clamp(1.7rem,3.6vw,2.7rem);margin-bottom:6px;position:relative;z-index:2}
-.ep-meta{color:var(--cocoa);font-weight:700;margin-bottom:22px}
-.beats{display:grid;gap:14px;margin:0;padding:0;list-style:none}
-.beats li{background:var(--paper);border:var(--line) solid var(--ink);padding:14px 16px 14px 18px;position:relative;box-shadow:var(--shadow-sm)}
-.beats li b{font-family:var(--display);font-weight:400;font-size:1.05rem;display:block;margin-bottom:4px}
-.beats li:nth-child(1) b{color:#A52A24}.beats li:nth-child(2) b{color:var(--teal)}.beats li:nth-child(3) b{color:#7d560e}.beats li:nth-child(4) b{color:#1F544C}.beats li:nth-child(5) b{color:#6E4520}
-.beats li i{font-style:italic}
-.lines{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-.lines li{font-family:var(--display);font-size:.98rem;border:2px solid var(--ink);padding:.3em .7em;background:var(--mint);transform:rotate(-1deg)}
-.lines li:nth-child(even){transform:rotate(1deg);background:var(--cream2)}
-.metric{margin-top:18px;font-size:.95rem;color:var(--cocoa)}
-.metric .todo,.todo{background:#FFE873;color:var(--ink);padding:.05em .4em;border:1.5px solid var(--ink);border-radius:3px;font-weight:700;font-size:.9em;font-style:normal}
-
-/* ---------- work tiles (full creative, never cropped) ---------- */
-.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;align-items:start}
-.tiles figure{margin:0;border:var(--line) solid var(--ink);box-shadow:var(--shadow);background:var(--paper);
-  transform:rotate(var(--r,0deg));transition:transform .25s cubic-bezier(.68,-0.55,.27,1.55)}
-.tiles figure:hover,.tiles figure:focus-within{transform:rotate(0) scale(1.02)}
-.tiles figure:nth-child(1){--r:-1.5deg}.tiles figure:nth-child(2){--r:1.2deg}.tiles figure:nth-child(3){--r:.8deg}.tiles figure:nth-child(4){--r:-1deg}
-.tiles img{width:100%;height:auto;background:var(--cream2)}
-.tiles figcaption{font-size:.85rem;padding:8px 10px;border-top:2px solid var(--ink);background:var(--paper);color:var(--cocoa)}
-.tiles.three{grid-template-columns:repeat(2,1fr)}
-.tiles.three figure{--r:0deg}
-.zoom{display:block;position:relative;text-decoration:none;cursor:zoom-in}
-.zoom::after{content:"⤢";position:absolute;right:8px;bottom:8px;width:32px;height:32px;display:grid;place-items:center;
-  font-size:1rem;color:var(--ink);background:var(--paper);border:2px solid var(--ink);opacity:0;transition:opacity .2s}
-figure:hover .zoom::after,.zoom:focus-visible::after{opacity:1}
-
-/* ---------- reel ---------- */
-.reel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;margin-top:30px;align-items:start}
-.reel-grid figure{margin:0;border:var(--line) solid var(--ink);background:var(--paper);box-shadow:var(--shadow-sm)}
-.reel-grid img{width:100%;height:auto;background:var(--cream2)}
-.reel-grid figcaption{padding:8px 10px;font-size:.85rem;border-top:2px solid var(--ink);background:var(--paper)}
-.reel-grid figcaption b{color:var(--ink)}
-
-/* ---------- deleted scenes ---------- */
-.scenes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:30px}
-.scene{background:var(--paper);border:var(--line) solid var(--ink);box-shadow:var(--shadow);padding:22px;display:grid;gap:10px;align-content:start}
-.scene .brand{font-weight:700;color:var(--cocoa)}
-.scene .concept{font-size:.98rem}
-.scene .line{font-family:var(--display);font-size:1.6rem;line-height:1.1;color:var(--ink);border-left:6px solid var(--cherry);padding-left:12px;margin:0}
-.scene .tag{color:#1F544C;font-weight:700;font-size:.9rem}
-.trap{margin-top:34px;display:flex;justify-content:flex-end}
-.trap svg{width:min(360px,84vw);height:auto}
-
-/* ---------- process ---------- */
-.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:30px}
-.step{border:var(--line) solid var(--ink);background:var(--paper);padding:22px 20px;box-shadow:var(--shadow-sm)}
-.step .ic{width:54px;height:54px;display:grid;place-items:center;margin-bottom:12px}
-.step h3{font-size:1.4rem;margin-bottom:6px}
-.step p{margin:0;font-size:.98rem}
-
-/* ---------- about ---------- */
-.about{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
-.about .photo{border:var(--line) solid var(--ink);box-shadow:var(--shadow);background:var(--mint);aspect-ratio:4/5;display:grid;place-items:center;transform:rotate(2deg);font-family:var(--display);font-size:1.3rem;color:var(--ink);text-align:center;padding:20px}
-.facts{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:8px}
-.facts li{padding-left:28px;position:relative}
-.facts li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:14px;background:var(--mustard);border:2px solid var(--ink);
-  clip-path:polygon(0 100%,100% 100%,100% 35%,50% 0,0 35%)}
-
-/* ---------- credits ---------- */
-footer{background:var(--ink);color:var(--cream);padding:80px 0 40px;border-top:var(--line) solid var(--ink)}
-footer h2{color:var(--cream);font-size:clamp(2rem,5vw,3.6rem)}
-footer a{color:var(--mustard)}
-.credits{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:28px}
-.credit-list{list-style:none;margin:0;padding:0;font-size:1.05rem}
-.credit-list li{display:flex;justify-content:space-between;gap:20px;padding:10px 0;border-bottom:1px dashed rgba(247,232,201,.3);flex-wrap:wrap}
-.credit-list li>span:first-child{color:#C6BBA8}
-.credit-list a{word-break:break-word}
-footer .btn{box-shadow:6px 6px 0 var(--mustard)}
-.fine{margin-top:50px;font-size:.9rem;color:rgba(247,232,201,.72)}
-.duo{margin-top:38px;display:flex;justify-content:center}
-.duo svg{width:min(340px,80vw);height:auto}
-
-/* ---------- footprint spine (scroll-drawn) ---------- */
-.spine{position:absolute;left:50%;top:0;height:100%;width:72px;margin-left:-36px;pointer-events:none;z-index:0;overflow:hidden}
-.spine svg{display:block}
-@supports (animation-timeline: view()){
-  @media (prefers-reduced-motion: no-preference){
-    .spine{clip-path:inset(0 0 100% 0);animation:reveal linear both;animation-timeline:view();animation-range:entry 10% exit 60%}
-    @keyframes reveal{to{clip-path:inset(0 0 0% 0)}}
-  }
-}
-@media (max-width:980px){.spine{display:none}}
-
-/* ---------- lightbox ---------- */
-dialog.lb{border:var(--line) solid var(--ink);background:var(--paper);padding:0;max-width:min(94vw,1000px);max-height:92vh;
-  box-shadow:10px 10px 0 rgba(33,26,18,.5);color:var(--cocoa)}
-dialog.lb::backdrop{background:rgba(33,26,18,.86)}
-.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px 12px;border-bottom:var(--line) solid var(--ink);background:var(--mustard)}
-.lb-bar p{margin:0;font-size:.9rem;font-weight:700;color:var(--ink)}
-.lb-close{font-family:var(--display);font-size:1rem;background:var(--paper);border:var(--line) solid var(--ink);padding:.35em .8em;cursor:pointer;color:var(--ink);min-height:44px}
-.lb-body{padding:14px;overflow:auto;max-height:calc(92vh - 70px);background:var(--cream2)}
-.lb-body img{width:auto;max-width:100%;max-height:74vh;height:auto;margin:0 auto;border:2px solid var(--ink);background:var(--paper)}
-.lb-body video{width:auto;max-width:100%;max-height:74vh;height:auto;margin:0 auto;display:block;border:2px solid var(--ink);background:var(--ink)}
-#lb-img[hidden],#lb-vid[hidden]{display:none!important}
-
-/* ---------- calm mode ---------- */
-.calm-btn{font-family:var(--display);font-size:.9rem;background:var(--paper);border:var(--line) solid var(--ink);
-  box-shadow:var(--shadow-sm);padding:.4em .8em;cursor:pointer;color:var(--ink);min-height:44px;white-space:nowrap}
-.calm-btn:hover{background:var(--mustard)}
-html.calm *,html.calm *::before,html.calm *::after{animation:none!important;transition:none!important}
-html.calm .btn,html.calm .panel,html.calm .presents,html.calm .chip,html.calm .ep-num,html.calm .lines li,
-html.calm .tiles figure,html.calm .about .photo,html.calm .hero h1,html.calm .ep-head .burst,html.calm .hole-label,
-html.calm .panel .beat,html.calm .scene,html.calm .trap,html.calm .quote,html.calm .pq,
-html.calm .doc-step,html.calm .also-card,html.calm .wcard{transform:none!important}
-html.calm .ep-head .burst{transform:translate(-50%,-50%)!important}
-html.calm .spine,html.calm .chase-band{display:none}
-html.calm{scroll-behavior:auto}
-
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .btn,.panel,.presents,.chip,.ep-num,.lines li,.tiles figure,.about .photo,.hero h1,.hole-label,
-  .panel .beat,.scene,.trap,.quote,.pq,.doc-step,.also-card,.wcard{transform:none!important}
-  .ep-head .burst{transform:translate(-50%,-50%)!important}
-  .spine,.chase-band{display:none}
-  html{scroll-behavior:auto}
-}
-
-
-/* ---------- v5: video loops in the ink-framed tile ---------- */
-.tiles video,.also-media video{width:100%;height:auto;display:block;background:var(--ink)}
-.tiles figcaption .badge,.also-media figcaption .badge{display:inline-block;font-family:var(--display);
-  font-size:.72rem;background:var(--ink);color:var(--cream);padding:.1em .45em;margin-right:6px;vertical-align:1px}
-
-/* ---------- v5: typographic document panels (no screenshots) ---------- */
-.docstrip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:var(--line) solid var(--ink);
-  box-shadow:var(--shadow);background:var(--paper);margin-top:6px}
-.doc-step{padding:16px 16px 18px;border-right:var(--line) solid var(--ink)}
-.doc-step:nth-child(2n){border-right:0}
-.doc-step:nth-child(-n+2){border-bottom:var(--line) solid var(--ink)}
-.doc-step:last-child{background:#EAF4EE}
-.doc-step b{display:block;font-family:var(--display);font-weight:400;font-size:1.02rem;color:#A52A24;margin-bottom:6px}
-.doc-step:nth-child(2) b{color:var(--teal)}.doc-step:nth-child(3) b{color:#7d560e}.doc-step:nth-child(4) b{color:#1F544C}
-.doc-step p{margin:0;font-size:.94rem}
-.docnote{font-size:.86rem;margin:12px 0 0}
-
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.card{border:var(--line) solid var(--ink);background:var(--paper);box-shadow:var(--shadow-sm);padding:18px 18px 20px}
-.card h4{font-family:var(--display);font-weight:400;font-size:1.18rem;color:var(--ink);margin:0 0 8px}
-.card p{margin:0;font-size:.95rem}
-.chain{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0 0;padding:0;list-style:none}
-.chain li{font-family:var(--display);font-size:.95rem;border:2px solid var(--ink);background:var(--mint);padding:.25em .7em}
-.chain li.arrow{border:0;background:none;padding:0 2px;font-size:1.1rem}
-
-.pullquotes{display:grid;gap:18px}
-.pq{border:var(--line) solid var(--ink);background:var(--paper);box-shadow:var(--shadow);padding:24px;
-  transform:rotate(var(--r,0deg))}
-.pq:nth-child(2){--r:.8deg}.pq:nth-child(1){--r:-.8deg}
-.pq p{font-family:var(--display);font-weight:400;font-size:clamp(1.15rem,2.2vw,1.75rem);line-height:1.14;
-  color:var(--ink);margin:0 0 10px}
-.pq .who{font-size:.86rem;font-weight:700;color:var(--cocoa)}
-
-/* ---------- v5: the "Also" strip ---------- */
-.also{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:30px}
-.also-card{border:var(--line) solid var(--ink);background:var(--paper);box-shadow:var(--shadow);padding:22px;
-  display:grid;gap:10px;align-content:start;transform:rotate(var(--r,0deg));transition:transform .25s}
-.also-card:nth-child(3n+1){--r:-.6deg}.also-card:nth-child(3n){--r:.6deg}
-.also-card:hover{transform:rotate(0)}
-.also-card h3{font-size:1.42rem}
-.also-card p{margin:0;font-size:.98rem}
-.also-card .role{font-size:.9rem;font-weight:700;color:#1F544C}
-.also-media{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:2px}
-.also-media.one{grid-template-columns:minmax(0,1fr)}
-.also-media.one figure{max-width:260px}
-.also-media figure{margin:0;border:2px solid var(--ink);background:var(--paper);align-self:start}
-.also-media img{width:100%;height:auto;background:var(--cream2)}
-.also-media figcaption{font-size:.76rem;padding:5px 7px;border-top:2px solid var(--ink);line-height:1.3}
-
-/* ---------- v5: the wall of lines ---------- */
-.wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
-.quote{background:var(--paper);border:var(--line) solid var(--ink);box-shadow:var(--shadow);padding:20px 20px 18px;
-  transform:rotate(var(--r,0deg));transition:transform .25s cubic-bezier(.68,-0.55,.27,1.55)}
-.quote:nth-child(3n+1){--r:-1deg}.quote:nth-child(3n){--r:1deg}
-.quote:hover{transform:rotate(0) scale(1.02)}
-.quote p{font-family:var(--display);font-weight:400;font-size:1.28rem;line-height:1.14;color:var(--ink);margin:0 0 10px}
-.quote .who{font-size:.85rem;font-weight:700;color:var(--cocoa)}
-.spec{display:inline-block;font-family:var(--display);font-size:.76rem;background:var(--cherry);color:#fff;
-  border:2px solid var(--ink);padding:.06em .5em;margin-right:6px;vertical-align:1px}
-.wall-head{margin:44px 0 0;font-family:var(--display);font-size:1.3rem;color:var(--ink)}
-.footnote{margin-top:26px;font-size:.9rem}
-
-/* ---------- v5: working with me ---------- */
-.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:30px;align-items:start}
-.wcard{border:var(--line) solid var(--ink);background:var(--paper);box-shadow:var(--shadow);padding:24px;
-  transform:rotate(var(--r,0deg))}
-.wcard:nth-child(2),.wcard:nth-child(3){--r:.5deg}.wcard:nth-child(1),.wcard:nth-child(4){--r:-.5deg}
-.wcard h3{font-size:1.5rem;margin-bottom:12px}
-.wcard ul,.wcard ol{margin:0;padding-left:1.15em;display:grid;gap:9px}
-.wcard li{font-size:.99rem}
-.wcard p{margin:0;font-size:.99rem}
-.wcard p + p{margin-top:10px}
-
-/* ---------- v5: the archive reel ---------- */
-.reelwall{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:30px;align-items:start}
-.reelwall figure{margin:0;border:var(--line) solid var(--ink);box-shadow:var(--shadow-sm);background:var(--paper);
-  transform:rotate(var(--r,0deg));transition:transform .25s cubic-bezier(.68,-0.55,.27,1.55)}
-.reelwall figure:nth-child(4n+1){--r:-.8deg}.reelwall figure:nth-child(4n){--r:.8deg}
-.reelwall figure:hover,.reelwall figure:focus-within{transform:rotate(0) scale(1.03)}
-.reelwall img,.reelwall video{width:100%;height:auto;display:block;background:var(--cream2)}
-.reelwall video{background:var(--ink)}
-.reelwall figcaption{font-size:.82rem;line-height:1.35;padding:8px 10px;border-top:2px solid var(--ink);background:var(--paper)}
-.reelwall figcaption b{color:var(--ink);display:block}
-.nopix{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.nopix li{border-left:6px solid var(--teal);padding:2px 0 2px 14px;font-size:.98rem}
-.nopix li b{display:block;font-family:var(--display);font-weight:400;font-size:1.12rem;color:var(--ink)}
-
-/* ---------- v5: about prose ---------- */
-.about .prose p{max-width:62ch}
-.about .photo{align-content:center;gap:8px;max-width:400px;margin-left:auto}
-.about .photo small{display:block;font-family:var(--body);font-size:.8rem}
-/* the three Why/What/How beat chips match the beat colours used inside the episodes */
-.panel.why .beat{background:#A52A24;color:#fff}
-.panel.what .beat{background:var(--teal);color:#fff}
-.panel.how .beat{background:var(--mustard);color:var(--ink)}
-.hl{font-weight:700;color:var(--ink)}
-
-/* ---------- responsive ---------- */
-@media (max-width:1100px){
-  .hero-cat{width:210px}.hole{width:180px}
-  .hero .reel{position:static;transform:none;margin:30px auto 0;max-width:none;text-align:center}
-}
-@media (max-width:900px){
-  nav.top li{display:none}
-  nav.top li.m{display:block}
-  .stars svg:not(.prop-cheese){display:none}
-  .prop-cheese{left:auto!important;right:5%!important;bottom:15%!important;width:76px;height:auto}
-}
-@media (max-width:1100px){
-  .wall{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .reelwall{grid-template-columns:repeat(3,minmax(0,1fr))}
-  nav.top li.wide{display:none}
-}
-@media (max-width:980px){
-  .strip,.scenes{grid-template-columns:1fr}
-  .also,.work-grid{grid-template-columns:1fr}
-  .nopix{grid-template-columns:1fr}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .episode,.episode.flip{grid-template-columns:1fr;gap:28px}
-  .episode.flip .ep-text{order:0}
-  .about{grid-template-columns:1fr}
-  .about .photo{max-width:360px}
-  .credits{grid-template-columns:1fr}
-  .prints{display:none}
-  .chase-band{height:118px}
-  .runner-svg{width:290px}
-  .trap{justify-content:center}
-}
-@media (max-width:760px){
-  section{padding:64px 0}
-  .steps{grid-template-columns:1fr}
-  .hero{min-height:auto;padding:44px 20px 190px}
-  .hero-cat{width:150px;right:1%}
-  .hole{width:132px;left:3%}
-  .hole-label{top:-30px;font-size:.85rem}
-  .tiles.three{grid-template-columns:repeat(2,1fr)}
-  .chase-band{height:96px}
-  .runner-svg{width:230px}
-  @keyframes runacross{from{transform:translateX(-240px)}to{transform:translateX(104vw)}}
-  .ep-head .burst{width:100px;height:100px}
-  .ep-head{margin-bottom:36px}
-}
-@media (max-width:560px){
-  body{font-size:16px}
-  .wall{grid-template-columns:1fr}
-  .cards{grid-template-columns:1fr}
-  .docstrip{grid-template-columns:1fr}
-  .doc-step{border-right:0;border-bottom:var(--line) solid var(--ink)}
-  .doc-step:last-child{border-bottom:0}
-  .also-media{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .reelwall{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .wrap{padding:0 18px}
-  .steps{grid-template-columns:1fr}
-  .tiles,.tiles.three{grid-template-columns:1fr;gap:16px}
-  .reel-grid{grid-template-columns:1fr;gap:16px}
-  nav.top .wrap{gap:6px;min-height:56px}
-  nav.top .brand{font-size:1.02rem}
-  nav.top li a{padding:6px 7px;font-size:.82rem}
-  nav.top .calm-btn{font-size:.78rem;padding:.3em .55em}
-  .hero{padding:36px 18px 150px}
-  nav.top .calm-btn .lbl{display:none}
-  nav.top .calm-btn::after{content:attr(data-short)}
-  nav.top .brand{font-size:.94rem;gap:5px}
-  nav.top .wrap{padding:0 12px}
-  nav.top li a{padding:6px 5px;font-size:.8rem}
-  nav.top .navwrap{gap:5px}
-  .prop-cheese{left:42%!important;right:auto!important;bottom:4%!important;width:56px}
-  .hero-cat{width:126px;right:0}
-  .hole{width:112px;left:2%}
-  .chase-band{height:84px}
-  .runner-svg{width:190px}
-  @keyframes runacross{from{transform:translateX(-200px)}to{transform:translateX(106vw)}}
-  .credit-list li{flex-direction:column;gap:2px}
-  .lb-body{padding:8px}
-}
-</style>
+</script>
 </head>
 <body>
 
@@ -500,7 +79,7 @@ html.calm{scroll-behavior:auto}
       <a class="btn alt" href="#working">Brief me on a project</a>
     </div>
   </div>
-  <div class="reel">Ten episodes · 2018–2026 · BFSI · FMCG · Skincare · Steel · Jewellery · B2B · Founder voice</div>
+  <div class="reel">Eighteen episodes · 2018–2026 · BFSI · FMCG · Skincare · Steel · Jewellery · B2B · Founder voice</div>
   <div class="hero-cat" aria-hidden="true">
 <svg viewBox="0 0 260 210" width="260" height="210">
   <!-- cat crouched behind the title-card ring -->
@@ -658,297 +237,227 @@ html.calm{scroll-behavior:auto}
 
 <!-- ============ EPISODES ============ -->
 <section id="episodes">
-  <div class="spine" aria-hidden="true">
-<svg width="72" height="100%" preserveAspectRatio="none">
-<defs>
-<pattern id="pawtrail" width="72" height="168" patternUnits="userSpaceOnUse">
-  <g fill="#211A12">
-    <g transform="translate(16,14) rotate(-14)">
-      <ellipse cx="0" cy="0" rx="8" ry="6.5"/><circle cx="-8" cy="-9" r="3.2"/><circle cx="-1" cy="-12" r="3.4"/><circle cx="6" cy="-10" r="3.2"/><circle cx="11" cy="-4" r="2.8"/>
-    </g>
-    <g transform="translate(54,58) rotate(12)">
-      <ellipse cx="0" cy="0" rx="8" ry="6.5"/><circle cx="-8" cy="-9" r="3.2"/><circle cx="-1" cy="-12" r="3.4"/><circle cx="6" cy="-10" r="3.2"/><circle cx="11" cy="-4" r="2.8"/>
-    </g>
-    <g transform="translate(20,100) rotate(-10)">
-      <ellipse cx="0" cy="0" rx="4.4" ry="3.6"/><circle cx="-4" cy="-5" r="1.8"/><circle cx="0" cy="-6.6" r="1.9"/><circle cx="4" cy="-5" r="1.8"/>
-    </g>
-    <g transform="translate(50,132) rotate(10)">
-      <ellipse cx="0" cy="0" rx="4.4" ry="3.6"/><circle cx="-4" cy="-5" r="1.8"/><circle cx="0" cy="-6.6" r="1.9"/><circle cx="4" cy="-5" r="1.8"/>
-    </g>
-  </g>
-</pattern>
-</defs>
-<rect width="72" height="100%" fill="url(#pawtrail)" opacity=".3"/>
-</svg>
-</div>
-  <div class="wrap" style="position:relative;z-index:1">
-    <div class="sec-title"><span class="chip">Act 2</span><h2>Ten episodes</h2></div>
-    <p class="lede">Each one carries the same labels: <b>Why · What · How · My part · Result</b>. “My part” is the honest one. Where a number exists it has a source. Where it doesn’t, a proxy — how long it ran, how much of it there was, whether it got approved and reused.</p>
-
-    <!-- Ep 01 — Johnnie Walker Refreshing Mixer -->
-    <article class="episode">
-      <div class="ep-text">
-        <span class="ep-head"><svg class="burst" viewBox="0 0 100 100" width="100" height="100" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#D2372C" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 01 · Drinks</span></span>
-        <h3>Johnnie Walker Refreshing Mixer — <i>Revibe Summer Sessions</i></h3>
-        <p class="ep-meta">Drinks · Bengaluru, Goa, Hyderabad · May–Jun 2025 · <span class="todo">confirm: Eventually Co engagement or freelance</span></p>
-        <ul class="beats">
-          <li><b>Why</b>A mixer can’t post its way into a Saturday night. It has to <i>be</i> the Saturday night. The brief wasn’t an ad. It was three cities, three dates, and people who had to actually show up.</li>
-          <li><b>What</b>A 9:16 film for the Goa session. A three-beat countdown — <i>2 Days to Go</i>, <i>1 Day to Go</i>, <i>Date &amp; City Reveal</i>. City key art for Bengaluru, Goa and Hyderabad. RSVP running through District by Zomato.</li>
-          <li><b>How</b>A poster tells you something exists. A countdown tells you it’s about to stop existing. So the campaign was built as a clock, not a flyer — three assets that only make sense in sequence, each one handing the reader to the RSVP. The city reveal is the payoff, not the opener.</li>
-          <li><b>My part</b><span class="todo">confirm: exact scope — campaign copy, or copy + calendar</span> Film, edit and design credits sit with the wider team.</li>
-          <li><b>Result</b>Three cities on one campaign spine, with a live RSVP path through District by Zomato. <span class="todo">confirm: attendance, RSVPs or reach</span></li>
-        </ul>
-        <p class="metric">Poster plus a six-second muted loop for each asset. Click any tile to enlarge.</p>
-      </div>
-      <div class="tiles">
-        <figure class="vid"><a class="zoom" href="assets/media/eventually__jw-goa-1.mp4" data-video data-poster="assets/media/eventually__jw-goa-1.jpg"><video class="loop" data-autoplay muted loop playsinline preload="none" poster="assets/media/eventually__jw-goa-1.jpg" width="480" height="854" aria-label="Campaign film still from a Johnnie Walker Refreshing Mixer summer session in Goa: an evening event crowd, vertical format."><source src="assets/media/eventually__jw-goa-1.mp4" type="video/mp4"></video></a><figcaption><span class="badge">Loop</span>The Goa session film</figcaption></figure>
-        <figure class="vid"><a class="zoom" href="assets/media/freelance__others__2-days-to-go-goa.mp4" data-video data-poster="assets/media/freelance__others__2-days-to-go-goa.jpg"><video class="loop" data-autoplay muted loop playsinline preload="none" poster="assets/media/freelance__others__2-days-to-go-goa.jpg" width="480" height="854" aria-label="Animated countdown post reading &quot;2 Days to Go&quot; for the Goa session."><source src="assets/media/freelance__others__2-days-to-go-goa.mp4" type="video/mp4"></video></a><figcaption><span class="badge">Loop</span>Countdown, beat one — 2 Days to Go</figcaption></figure>
-        <figure class="vid"><a class="zoom" href="assets/media/eventually__jw-1-day-to-go-goa-1.mp4" data-video data-poster="assets/media/eventually__jw-1-day-to-go-goa-1.jpg"><video class="loop" data-autoplay muted loop playsinline preload="none" poster="assets/media/eventually__jw-1-day-to-go-goa-1.jpg" width="480" height="854" aria-label="Animated countdown post reading &quot;1 Day to Go&quot; for the Goa session."><source src="assets/media/eventually__jw-1-day-to-go-goa-1.mp4" type="video/mp4"></video></a><figcaption><span class="badge">Loop</span>Countdown, beat two — 1 Day to Go</figcaption></figure>
-        <figure class="vid"><a class="zoom" href="assets/media/eventually__date-city-reveal-goa.mp4" data-video data-poster="assets/media/eventually__date-city-reveal-goa.jpg"><video class="loop" data-autoplay muted loop playsinline preload="none" poster="assets/media/eventually__date-city-reveal-goa.jpg" width="480" height="854" aria-label="Animated reveal post announcing the date and city for the Goa session, with the RSVP route."><source src="assets/media/eventually__date-city-reveal-goa.mp4" type="video/mp4"></video></a><figcaption><span class="badge">Loop</span>Countdown, beat three — the Date &amp; City reveal</figcaption></figure>
-        <figure><a class="zoom" href="assets/media/jw-city-bengaluru-pangeo.webp"><img src="assets/media/jw-city-bengaluru-pangeo.webp" alt="Revibe Summer Sessions city card: Pangeo, Bengaluru, 24 May, 8 PM onwards, vinyl painting, RSVP on District by Zomato." width="960" height="1200" loading="lazy" decoding="async"></a><figcaption>City card — Pangeo, Bengaluru</figcaption></figure>
-        <figure><a class="zoom" href="assets/media/jw-city-hyderabad-scene.webp"><img src="assets/media/jw-city-hyderabad-scene.webp" alt="Revibe Summer Sessions city card reading &quot;Hyderabad, we're setting the scene&quot;, 19 June, Big Bull." width="675" height="1200" loading="lazy" decoding="async"></a><figcaption>City card — “Hyderabad, we’re setting the scene.”</figcaption></figure>
-        <p class="metric" style="grid-column:1/-1">The surviving key art covers Bengaluru, Gurugram and Hyderabad; Goa is carried by the film and the countdown. <span class="todo">confirm: whether Gurugram was part of the same run, and whether a Goa city card exists</span></p>
-      </div>
-    </article>
-
-    <!-- Ep 02 — InsuranceDekho -->
-    <article class="episode flip">
-      <div class="ep-text">
-        <span class="ep-head"><svg class="burst" viewBox="0 0 100 100" width="100" height="100" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#E3AE3C" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 02 · Insurance</span></span>
-        <h3>InsuranceDekho — #BharosaKarKeDekho</h3>
-        <p class="ep-meta">Insurance · TeamPumpkin · 2021–23</p>
-        <ul class="beats">
-          <li><b>Why</b>Nobody wakes up wanting to think about insurance. It’s the one thing you buy hoping you never use it. So the feed was full of posts nobody had a reason to stop for.</li>
-          <li><b>What</b>Campaign and hub content under one hashtag — #BharosaKarKeDekho, <i>trust, but check for yourself</i>. Statics, carousels and reel scripts. A features explainer built as a game of Tetris.</li>
-          <li><b>How</b>I stopped writing <i>about</i> insurance and started writing the sentence people already say to themselves. <i>Zoom into the mirror to see a reminder.</i> <i>Insurance that doesn’t exist — but you want it to exist.</i> <i>My name is Insurance. But people call me…</i> The category stayed boring. The sentence didn’t.</li>
-          <li><b>My part</b>Wrote hub and social copy inside the agency account team. Not media. Not design. <span class="todo">confirm: whether the campaign hashtag was hers, the team’s, or the client’s</span></li>
-          <li><b>Result</b><span class="todo">confirm: reach, engagement or campaign duration</span> Proxy until then: the hashtag carried topical, USP and moment posts across <span class="todo">confirm: N</span> months, and the campaign film and year-in-review reel both ran on the brand’s own handle.</li>
-        </ul>
-      </div>
-      <div class="tiles">
-        <figure class="vid"><a class="zoom" href="assets/media/teampumpkin__videos__saveinsta-app-2834430751632964211.mp4" data-video data-poster="assets/media/teampumpkin__videos__saveinsta-app-2834430751632964211.jpg"><video class="loop" data-autoplay muted loop playsinline preload="none" poster="assets/media/teampumpkin__videos__saveinsta-app-2834430751632964211.jpg" width="480" height="854" aria-label="InsuranceDekho campaign reel: close-up of an older man, on-screen Hindi text reading &quot;chai ki chuski mein&quot;."><source src="assets/media/teampumpkin__videos__saveinsta-app-2834430751632964211.mp4" type="video/mp4"></video></a><figcaption><span class="badge">Loop</span>Campaign reel — “chai ki chuski mein”</figcaption></figure>
-        <figure><a class="zoom" href="assets/media/insurancedekho-mirror-hires.jpg"><img src="assets/media/insurancedekho-mirror-hires.jpg" alt="InsuranceDekho creative: bold type reading &quot;Zoom into the mirror to see a reminder&quot;." width="1400" height="1337" loading="lazy" decoding="async"></a><figcaption>The hero static, at full resolution</figcaption></figure>
-        <figure><a class="zoom" href="assets/work/insurancedekho-exist.webp"><img src="assets/work/insurancedekho-exist.webp" alt="Social post reading &quot;Insurance that doesn’t exist — but you want it to exist&quot;." width="641" height="900" loading="lazy" decoding="async"></a><figcaption>Name the policy you wish existed</figcaption></figure>
-        <figure class="vid"><a class="zoom" href="assets/media/insurancedekho-my-name-anim.mp4" data-video data-poster="assets/media/insurancedekho-my-name-anim.jpg"><video class="loop" data-autoplay muted loop playsinline preload="none" poster="assets/media/insurancedekho-my-name-anim.jpg" width="480" height="854" aria-label="Animated post opening &quot;My name is Insurance. But people call me…&quot;."><source src="assets/media/insurancedekho-my-name-anim.mp4" type="video/mp4"></video></a><figcaption><span class="badge">Loop</span>The category, introducing itself</figcaption></figure>
-        <figure class="vid"><a class="zoom" href="assets/media/insurancedekho-tetris-anim.mp4" data-video data-poster="assets/media/insurancedekho-tetris-anim.jpg"><video class="loop" data-autoplay muted loop playsinline preload="none" poster="assets/media/insurancedekho-tetris-anim.jpg" width="480" height="854" aria-label="Animated feature explainer laid out as falling Tetris blocks — security, financial uncertainty, medical expenses."><source src="assets/media/insurancedekho-tetris-anim.mp4" type="video/mp4"></video></a><figcaption><span class="badge">Loop</span>Features, explained as Tetris</figcaption></figure>
-        <figure><a class="zoom" href="assets/work/insurancedekho-report-card.webp"><img src="assets/work/insurancedekho-report-card.webp" alt="Social post styled as a school report card, grading insurance habits." width="900" height="899" loading="lazy" decoding="async"></a><figcaption>A report card for your insurance habits</figcaption></figure>
-        <figure><a class="zoom" href="assets/work/insurancedekho-search.webp"><img src="assets/work/insurancedekho-search.webp" alt="Social post styled as a phone search bar with an insurance query typed in." width="720" height="720" loading="lazy" decoding="async"></a><figcaption>The question everyone types in anyway</figcaption></figure>
-      </div>
-    </article>
-
-    <!-- Ep 03 — Bioderma retainer -->
-    <article class="episode">
-      <div class="ep-text">
-        <span class="ep-head"><svg class="burst" viewBox="0 0 100 100" width="100" height="100" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#8FCDE8" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 03 · Skincare</span></span>
-        <h3>Bioderma — seven months on retainer</h3>
-        <p class="ep-meta">Skincare · Freelance · Aug 2023 – Feb 2024 · <span class="todo">confirm: brand permission to name Bioderma; fallback label — “a French dermatological skincare brand”</span></p>
-        <ul class="beats">
-          <li><b>Why</b>Skincare social has two failure modes. Either it’s a product shot with a claim on it, or it’s a science lecture. Both get scrolled. The brand needed posts that taught something and still looked like the brand.</li>
-          <li><b>What</b>A monthly system: December campaign ideation → client plan deck with stated objectives and tone → content buckets per product range → a dated calendar → daily copy. Then the part most people don’t show — the approval tracker.</li>
-          <li><b>How</b>One post is the whole case. I pitched a carousel on the five types of hyperpigmentation. The brand came back and said, in effect: <i>we haven’t explained what this even is yet, so the follow-up won’t land — go back a step.</i> They were right. I rewrote it as the basics, and it was approved. That exchange is the job. Not the caption — the note before it.<br><br>I logged every one of them. Concept, first draft, the brand’s note, revision, approved, final caption, post timing. It isn’t a filing habit. It’s the argument: you can see what I got wrong and what I did next.</li>
-          <li><b>My part</b>Wrote the concepts, the calendars and every caption. Took the notes. Made the revisions.</li>
-          <li><b>Result</b>Retainer ran seven months. <span class=hl>172 posts tracked brief-to-approval across four monthly sheets, Oct 2023 – Jan 2024</span> <i>(counted from the tracker itself — 44 / 27 / 50 / 51)</i>. <span class="todo">confirm: any engagement or sales figure the brand is willing to share</span></li>
-        </ul>
-      </div>
-      <div>
-        <p class="ep-meta" style="margin-bottom:10px">One post, brief to approval</p>
-        <div class="docstrip">
-          <div class="doc-step"><b>Concept</b><p>A carousel on the five types of hyperpigmentation.</p></div>
-          <div class="doc-step"><b>First draft</b><p>Written and sent for approval.</p></div>
-          <div class="doc-step"><b>The note back</b><p>Paraphrased: we haven’t explained what this even is yet, so the follow-up won’t land — go back a step.</p></div>
-          <div class="doc-step"><b>Approved</b><p>Rewritten as the basics. Same subject, one step earlier. Approved.</p></div>
-        </div>
-        <p class="docnote">Client feedback paraphrased, never quoted. No efficacy claim reproduced outside the brand’s own approved wording.</p>
-        <p class="docnote"><span class="todo">confirm: brand permission before this strip is published under the Bioderma name</span></p>
-      </div>
-    </article>
-
-    <!-- Ep 04 — strategy documents -->
-    <article class="episode flip">
-      <div class="ep-text">
-        <span class="ep-head"><svg class="burst" viewBox="0 0 100 100" width="100" height="100" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#7EC6B4" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 04 · Strategy</span></span>
-        <h3>Strategy, not just posts</h3>
-        <p class="ep-meta">Wealth management · Hospital fitness club · Eventually Co · 2025 · <span class="todo">confirm: client sign-off to name — until then, published anonymised</span></p>
-        <ul class="beats">
-          <li><b>Why</b>Two clients, same request: <i>give us posts</i>. Neither had a reason for anyone to follow them. A calendar can’t fix that. You have to decide what the brand is for first.</li>
-          <li><b>What</b>Two strategy documents.<br><br>For <span class=hl>a wealth-management firm</span>: a positioning line, five named content buckets — each with its own job, not just a topic — a per-platform plan for LinkedIn, Instagram, podcast and video, and a full podcast format with three episode types, runtimes and a repurposing chain down to reels.<br><br>For <span class=hl>a hospital’s fitness club</span>: goals, seven buckets each opening with a stated objective, then the executions — post titles, carousel scripts, a lead-gen offer, geo-targeting logic — and a closing section on what the whole thing is supposed to earn the business.</li>
-          <li><b>How</b>The decision in both was to lead with the thing the client thought was boring. The fitness club kept selling equipment; every gym sells equipment. It sits inside a hospital. So the line became <i>where fitness meets medical trust</i>, and the doctors went into the content plan, not the footer. The wealth firm kept publishing market updates; so does everyone. The bucket that earns the fee is the one where the advisor shows how he reviews a portfolio.</li>
-          <li><b>My part</b>Wrote both strategy documents end to end.</li>
-          <li><b>Result</b><span class="todo">confirm: adoption — was either deck approved, and did it run?</span> Proxy: both documents descend from goal → bucket → objective → execution, and each bucket carries its rationale before its examples. That structure is the deliverable.</li>
-        </ul>
-      </div>
-      <div>
-        <p class="ep-meta" style="margin-bottom:10px">The decision in each document</p>
-        <div class="cards">
-          <div class="card"><h4>A wealth-management firm</h4><p>Kept publishing market updates; so does everyone. The bucket that earns the fee is the one where the advisor shows how he reviews a portfolio.</p></div>
-          <div class="card"><h4>A hospital’s fitness club</h4><p>Kept selling equipment; every gym sells equipment. It sits inside a hospital. So the line became <i>where fitness meets medical trust</i>, and the doctors went into the content plan, not the footer.</p></div>
-        </div>
-        <p class="ep-meta" style="margin:22px 0 0">Both documents descend the same chain</p>
-        <ul class="chain">
-          <li>Goal</li><li class="arrow" aria-hidden="true">→</li>
-          <li>Bucket</li><li class="arrow" aria-hidden="true">→</li>
-          <li>Objective</li><li class="arrow" aria-hidden="true">→</li>
-          <li>Execution</li>
-        </ul>
-        <p class="docnote">Each bucket carries its rationale before its examples. That structure is the deliverable.</p>
-        <p class="docnote"><span class="todo">confirm: Eventually Co approval before publishing any excerpt</span></p>
-        <p class="docnote"><span class="todo">confirm: the five bucket names and their one-line rationales, for the five-card row</span></p>
-      </div>
-    </article>
-
-    <!-- Ep 05 — founder LinkedIn -->
-    <article class="episode">
-      <div class="ep-text">
-        <span class="ep-head"><svg class="burst" viewBox="0 0 100 100" width="100" height="100" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#E8702A" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 05 · Founder voice</span></span>
-        <h3>A founder’s LinkedIn, in her own voice</h3>
-        <p class="ep-meta">Bespoke furniture · Eventually Co · Oct 2025 · <span class="todo">confirm: founder credit cleared — otherwise “a bespoke furniture studio and its founder”</span></p>
-        <ul class="beats">
-          <li><b>Why</b>Founders on LinkedIn tend to sound like their own brochure. The brand account can do that. The person can’t — the whole value of a founder’s post is that a brand couldn’t have written it.</li>
-          <li><b>What</b>One calendar running two voices in parallel: the studio’s account and the founder’s personal one. Eleven columns — date, brand post, founder post, Instagram concept, Instagram copy, format, and the client’s remarks coming back into the same sheet. 20,331 words in one month.</li>
-          <li><b>How</b>The rule for the founder’s voice was that she had to admit a cost. Not a lesson — a cost. So the posts say what the work actually took. The brand account got the craft. The founder got the doubt. Two voices, one calendar, no overlap.</li>
-          <li><b>My part</b>Wrote both voices. Ran the calendar. The client’s remarks are logged in the sheet, and the revisions came back through me.</li>
-          <li><b>Result</b><span class=hl>20,331 words across one month’s calendar</span>, with the client’s replies inside the document — which is how the revision loop stayed in one place instead of in a chat thread. <span class="todo">confirm: post performance, follower change, or how many months the programme ran</span></li>
-        </ul>
-      </div>
-      <div>
-        <p class="ep-meta" style="margin-bottom:10px">Two lines from the founder’s side of the calendar</p>
-        <div class="pullquotes">
-          <blockquote class="pq"><p>“Sustainability is not perfection. It’s patience. It’s commitment.”</p><span class="who">Founder LinkedIn · 2025 · founder ghostwriting</span></blockquote>
-          <blockquote class="pq"><p>“But here’s the thing, design doesn’t work on Diwali deadlines.”</p><span class="who">Founder LinkedIn · 2025 · founder ghostwriting</span></blockquote>
-        </div>
-        <p class="docnote"><span class="todo">confirm: the client’s permission line to run under these quotes</span></p>
-      </div>
-    </article>
-
-    <!-- Ep 06 — Hinglish that sells -->
-    <article class="episode flip">
-      <div class="ep-text">
-        <span class="ep-head"><svg class="burst" viewBox="0 0 100 100" width="100" height="100" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#2F6E63" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 06 · Cookware × lending</span></span>
-        <h3>Hinglish that sells</h3>
-        <p class="ep-meta">Cookware + lending · TeamPumpkin · 2021–23</p>
-        <ul class="beats">
-          <li><b>Why</b>Two categories nobody brings up at a party: a pressure cooker and a loan app. Both were posting product features into a feed that only rewards recognition.</li>
-          <li><b>What</b>Culture-first social for both. For the cookware brand: kitchen truths instead of kitchen shots. For the lending app, running as an IPL team’s digital partner: money worries mapped to lines people already know by heart.</li>
-          <li><b>How</b>Hinglish only when the insight is actually cultural. <i>In India we don’t ask khana khaya, we say khana kha ke jana</i> — that sentence isn’t a translation, it’s the whole insight about how Indian homes show care. Same with <i>Aamdani athanni phir bhi kharcha rupaiya?</i> — a loan app can’t lecture you about money, but a phrase your family already uses can.<br><br>And the one I’d still defend in a room: on International Men’s Day, for a cookware brand — <i>a cooker is supposed to be strong; men are allowed to be soft.</i> Cultural insight, product truth, one line.</li>
-          <li><b>My part</b>Wrote the copy inside the agency account team. Not media, not design, not the IPL partnership deal. <span class="todo">confirm: which posts were her concepts vs. the account team’s</span></li>
-          <li><b>Result</b>Two live posts show roughly <span class=hl>2.6k and 3k public likes</span> in the captured screenshots. <i>Provenance: public like counts visible on live posts; capture date unknown, paid support unknown.</i> <span class="todo">confirm: dates, and whether either post was boosted</span></li>
-        </ul>
-      </div>
-      <div class="tiles">
-        <figure><a class="zoom" href="assets/work/pigeon-khana.webp"><img src="assets/work/pigeon-khana.webp" alt="Cookware social post: &quot;In India we don’t ask khana khaya, we say khana kha ke jana&quot;." width="900" height="892" loading="lazy" decoding="async"></a><figcaption>Cultural insight as the headline</figcaption></figure>
-        <figure><a class="zoom" href="assets/work/pigeon-hierarchy.webp"><img src="assets/work/pigeon-hierarchy.webp" alt="&quot;Bachelors Hierarchy of Needs&quot; pyramid post, cookware at the base." width="900" height="895" loading="lazy" decoding="async"></a><figcaption>Bachelors’ Hierarchy of Needs</figcaption></figure>
-        <figure><a class="zoom" href="assets/work/pigeon-cooker-soft.webp"><img src="assets/work/pigeon-cooker-soft.webp" alt="International Men’s Day post: a cooker is supposed to be strong, men are allowed to be soft." width="900" height="896" loading="lazy" decoding="async"></a><figcaption>International Men’s Day — the cooker is the metaphor</figcaption></figure>
-        <figure class="vid"><a class="zoom" href="assets/media/pigeon-led-reel.mp4" data-video data-poster="assets/media/pigeon-led-reel.jpg"><video class="loop" data-autoplay muted loop playsinline preload="none" poster="assets/media/pigeon-led-reel.jpg" width="480" height="854" aria-label="Cookware brand LED-bulb product reel, vertical format."><source src="assets/media/pigeon-led-reel.mp4" type="video/mp4"></video></a><figcaption><span class="badge">Loop</span>A product post, written as a scene</figcaption></figure>
-        <figure><a class="zoom" href="assets/work/kreditbee-athanni.webp"><img src="assets/work/kreditbee-athanni.webp" alt="Lending-app social post reading &quot;Aamdani Athanni phir bhi Kharcha Rupaiya?&quot;." width="658" height="900" loading="lazy" decoding="async"></a><figcaption>A phrase your family already uses</figcaption></figure>
-        <figure><a class="zoom" href="assets/work/kreditbee-befikre.webp"><img src="assets/work/kreditbee-befikre.webp" alt="Lending-app IPL-season post reading &quot;Ude Dil Befikre&quot;." width="664" height="900" loading="lazy" decoding="async"></a><figcaption>IPL season, in the stadium’s voice</figcaption></figure>
-      </div>
-    </article>
-
-    <!-- Ep 07 — Tata Steel Industrial Consulting -->
-    <article class="episode">
-      <div class="ep-text">
-        <span class="ep-head"><svg class="burst" viewBox="0 0 100 100" width="100" height="100" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#7E8FA6" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 07 · B2B</span></span>
-        <h3>Tata Steel Industrial Consulting — collateral for engineers</h3>
-        <p class="ep-meta">B2B industrial · TeamPumpkin · 2021–23</p>
-        <ul class="beats">
-          <li><b>Why</b>Engineers don’t read ads. They read specifications. The consulting arm of a steel company was selling forming, rolling and quality systems to plant heads — an audience that can spot a copywriter from across the shop floor.</li>
-          <li><b>What</b>Capability brochures, event and e-learning standees, service explainers, webinar announcements, and the festive posts for the Digi-e-Shala handle.</li>
-          <li><b>How</b>Take the jokes out. Put the nouns in. A plant head wants the process named and the contact block where he can find it, so the standee leads with the six course families and ends on a QR code, and the webinar post says what the session covers before it says why you should come. Same writer as the cookware episode, opposite register.</li>
-          <li><b>My part</b>Wrote the collateral copy inside the agency account team. Not design. Not media.</li>
-          <li><b>Result</b><span class="todo">confirm: webinar registrations or lead volume</span> Proxy: one verbal system carried across offline standees, brochures, emailers and social, including moment-marketing posts on a steel-industry handle.</li>
-        </ul>
-      </div>
-      <div class="tiles">
-        <figure class="vid"><a class="zoom" href="assets/media/teampumpkin__videos__tsldigieshala-2935730746931563139.mp4" data-video data-poster="assets/media/teampumpkin__videos__tsldigieshala-2935730746931563139.jpg"><video class="loop" data-autoplay muted loop playsinline preload="none" poster="assets/media/teampumpkin__videos__tsldigieshala-2935730746931563139.jpg" width="480" height="480" aria-label="Tata Steel Digi-e-Shala animated festive post, top-down illustration of a garba circle."><source src="assets/media/teampumpkin__videos__tsldigieshala-2935730746931563139.mp4" type="video/mp4"></video></a><figcaption><span class="badge">Loop</span>Digi-e-Shala — Navratri</figcaption></figure>
-        <figure class="vid"><a class="zoom" href="assets/media/tsic-digieshala-2.mp4" data-video data-poster="assets/media/tsic-digieshala-2.jpg"><video class="loop" data-autoplay muted loop playsinline preload="none" poster="assets/media/tsic-digieshala-2.jpg" width="480" height="480" aria-label="A second Tata Steel Digi-e-Shala animated festive post."><source src="assets/media/tsic-digieshala-2.mp4" type="video/mp4"></video></a><figcaption><span class="badge">Loop</span>Digi-e-Shala — a second festive post</figcaption></figure>
-        <figure><a class="zoom" href="assets/media/tsic-digieshala-standee.webp"><img src="assets/media/tsic-digieshala-standee.webp" alt="Tata Steel Digi-e-Shala roll-up standee: &quot;Unlock your inner potential with Digi-e-shala e-learning courses&quot;, six course icons and a QR code." width="600" height="1200" loading="lazy" decoding="async"></a><figcaption>Roll-up standee — six course families, one QR code</figcaption></figure>
-        <figure><a class="zoom" href="assets/media/tsic-event-standee.webp"><img src="assets/media/tsic-event-standee.webp" alt="Tata Steel Industrial Consulting event standee: &quot;TSIC: the consulting arm of Tata Steel&quot;, digital transformation and automation solutions." width="600" height="1200" loading="lazy" decoding="async"></a><figcaption>Event standee — the consulting arm, in one panel</figcaption></figure>
-        <figure><a class="zoom" href="assets/work/tsic-forming.webp"><img src="assets/work/tsic-forming.webp" alt="Tata Steel Industrial Consulting collateral on forming technologies, technical B2B layout." width="718" height="900" loading="lazy" decoding="async"></a><figcaption>Forming technologies</figcaption></figure>
-        <figure><a class="zoom" href="assets/work/tsic-rolling.webp"><img src="assets/work/tsic-rolling.webp" alt="TSIC collateral on rolling technology for plant engineers." width="894" height="900" loading="lazy" decoding="async"></a><figcaption>Rolling technology</figcaption></figure>
-      </div>
-    </article>
-
-    <!-- Ep 08 — four languages, four scripts -->
-    <article class="episode flip">
-      <div class="ep-text">
-        <span class="ep-head"><svg class="burst" viewBox="0 0 100 100" width="100" height="100" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#E8702A" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 08 · Scripts</span></span>
-        <h3>Four languages, four scripts</h3>
-        <p class="ep-meta">Retail · White-label, through an agency · 2024 · <span class="todo">confirm: agency and client sign-off to name the retailer</span></p>
-        <ul class="beats">
-          <li><b>Why</b>A testimonial only works if the person on camera sounds like someone you know. Translate one script four times and everybody sounds like the same stranger.</li>
-          <li><b>What</b>Five customer-testimonial scripts for a fashion retailer’s Free Shopping Week, in English, Hindi, Marathi and Gujarati. Each one carries an <i>Agenda</i> and a <i>Focus</i> line underneath, so the shoot knows what the scene is for.</li>
-          <li><b>How</b>Different protagonists, different reasons to shop. A couple starting a new year. A parent buying shoes for a son leaving for college. Someone spending a first salary on their parents. The Hindi script isn’t the English one in Hindi — it’s a two-hander, because that’s how the offer gets discussed at home.</li>
-          <li><b>My part</b>Wrote all five scripts and the Agenda and Focus line under each. White-label, through an agency.</li>
-          <li><b>Result</b><span class="todo">confirm: whether the films were produced, and how they performed</span> Proxy: five scripts, four languages, and the rationale shipped inside the document rather than in a covering note.</li>
-        </ul>
-      </div>
-      <div>
-        <p class="ep-meta" style="margin-bottom:10px">Two openings, side by side</p>
-        <div class="cards">
-          <div class="card"><h4>Script 1 — English</h4><p><i>“Hey there, it’s [Name]. So, check this out — I accidentally stumbled upon [the store]’s Free Shopping Week, and let me tell you, it’s a game-changer.”</i></p><p style="margin-top:10px"><b>Agenda:</b> steal deals and discount offer.</p></div>
-          <div class="card"><h4>Script 2 — Hindi</h4><p><i>“Boyfriend: Naya saal, naye kapde! Toh hum soch rahe the ki kyun na Free Shopping Week mein kuch alag try kiya jaye.”</i></p><p style="margin-top:10px"><b>Agenda:</b> a great shopping experience with free gifts.</p></div>
-        </div>
-        <p class="docnote">One is a monologue to camera. The other is a two-hander, because that is how the offer actually gets discussed at home. Brand name removed from the excerpts pending sign-off.</p>
-        <p class="docnote"><span class="todo">confirm: whether the Marathi and Gujarati scripts can be excerpted too</span></p>
-      </div>
-    </article>
-
-    <!-- Ep 09 — diagnostic centre growth plan -->
-    <article class="episode">
-      <div class="ep-text">
-        <span class="ep-head"><svg class="burst" viewBox="0 0 100 100" width="100" height="100" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#1F544C" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 09 · Healthcare</span></span>
-        <h3>A diagnostic centre’s growth plan</h3>
-        <p class="ep-meta">Healthcare · White-label, through an agency · <span class="todo">confirm: year, and agency sign-off to describe the engagement</span></p>
-        <ul class="beats">
-          <li><b>Why</b>A radiology clinic doesn’t grow by posting more. It grows by knowing how many people in its own town could ever walk through the door, and which of them it can actually reach.</li>
-          <li><b>What</b>A business growth plan: current state and consequences, vision and mission, value proposition, target group, a market sizing carried down to the penetrated market, a four-tier competitive analysis, and a full business model canvas.</li>
-          <li><b>How</b>The sizing is the argument. Start from the town’s population and cut down to the number the clinic already serves. Then the marketing question stops being <i>what should we post</i> and becomes <i>which tier of competitor is the next two thousand coming from</i>.</li>
-          <li><b>My part</b>Wrote the plan. White-label, through an agency. Not designed by me, and the clinical claims are the client’s.</li>
-          <li><b>Result</b><span class="todo">confirm: adoption — was the plan approved, and did it run?</span> Proxy: the document runs problem → market size → competitive set → business model, in that order. The structure is the exhibit; the deck stays private.</li>
-        </ul>
-      </div>
-      <div>
-        <p class="ep-meta" style="margin-bottom:10px">The sizing, top to bottom</p>
-        <div class="docstrip">
-          <div class="doc-step"><b>Total addressable</b><p>The town’s population — 5 lakh.</p></div>
-          <div class="doc-step"><b>Serviceable available</b><p>50,000.</p></div>
-          <div class="doc-step"><b>Serviceable obtainable</b><p>7,000–9,000.</p></div>
-          <div class="doc-step"><b>Penetrated</b><p>2,500. The number the clinic already serves.</p></div>
-        </div>
-        <p class="ep-meta" style="margin:22px 0 10px">And the canvas underneath it</p>
-        <ul class="chain">
-          <li>Key activities</li><li>Customer segments</li><li>Channels</li>
-          <li>Key partners</li><li>Customer relationships</li><li>Cost structure</li>
-        </ul>
-        <p class="docnote">Figures are the market sizing from the plan. The competitive analysis, the named clinician and the cost structure are not reproduced. The deck stays private.</p>
-        <p class="docnote"><span class="todo">confirm: sign-off before these figures are published</span></p>
-      </div>
-    </article>
-
-    <!-- Ep 10 — fine jewellery house style -->
-    <article class="episode flip">
-      <div class="ep-text">
-        <span class="ep-head"><svg class="burst" viewBox="0 0 100 100" width="100" height="100" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#A52A24" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 10 · Jewellery</span></span>
-        <h3>A house style for fine jewellery</h3>
-        <p class="ep-meta">Fine jewellery · Freelance · 2024 · <span class="todo">confirm: permission to name the designer; unreleased designs may be involved</span></p>
-        <ul class="beats">
-          <li><b>Why</b>Product copy for high jewellery usually reaches for adjectives. Adjectives are free, so they are worth nothing. Someone spending that much wants to know what the piece is <i>about</i> before being told it is beautiful.</li>
-          <li><b>What</b>Product descriptions across 98 slides, delivered in numbered parts, plus the portfolio document that set the format.</li>
-          <li><b>How</b>One structure, held for every piece: the motif, why the motif matters, how the piece embodies it, then the spec — stones, cut, mechanism, count. A braid becomes a woven necklace of tourmalines and diamond baguettes. A butterfly becomes princess-cut diamonds and blue enamel on a spring mechanism.</li>
-          <li><b>My part</b>Wrote the descriptions and set the format.</li>
-          <li><b>Result</b><span class="todo">confirm: whether the descriptions were published, and where</span> Proxy: the same four-part structure across 98 slides, held without drifting. Consistency at that length is the deliverable.</li>
-        </ul>
-      </div>
-      <div>
-        <p class="ep-meta" style="margin-bottom:10px">Two openings, as written</p>
-        <div class="pullquotes">
-          <blockquote class="pq"><p>“Braided hair is like art in motion, where strands weave together in a beautiful dance of patterns.”</p><span class="who">Product description · fine jewellery · 2024</span></blockquote>
-          <blockquote class="pq"><p>“The Papilio Ulysses butterfly is celebrated for its stunning blue and green hues.”</p><span class="who">Product description · fine jewellery · 2024</span></blockquote>
-        </div>
-        <p class="docnote">Each description then names the stones, the cut and the mechanism. The essay earns the spec; the spec proves the essay.</p>
-        <p class="docnote"><span class="todo">confirm: client approval before either quote runs under the designer’s name</span></p>
-      </div>
-    </article>
+  <div class="wrap">
+    <div class="sec-title"><span class="chip">Act 2</span><h2>Eighteen episodes</h2></div>
+    <p class="lede">Each one carries the same labels: <b>Why · What · How · My part · Result</b>. Every episode has its own page, with the full case, larger media, and why it's a reason to hire her. Where a number exists it has a source. Where it doesn't, a named proxy.</p>
+    <div class="epgrid">
+      <article class="epcard">
+        <a class="epcard-link" href="work/johnnie-walker-revibe/">
+          <div class="epcard-media"><img src="assets/media/eventually__jw-goa-1.jpg" alt="Campaign film still from a Johnnie Walker Refreshing Mixer summer session in Goa." width="480" height="600" loading="lazy" decoding="async"></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#D2372C" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 01 &middot; Drinks</span></span>
+            <h3>Johnnie Walker Refreshing Mixer — <i>Revibe Summer Sessions</i></h3>
+            <p class="epcard-why">A mixer can’t post its way into a Saturday night. It has to <i>be</i> the Saturday night.</p>
+            <p class="epcard-result"><b>Result.</b> Three cities on one campaign spine, with a live RSVP path through District by Zomato.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/insurancedekho-bharosa/">
+          <div class="epcard-media"><img src="assets/media/insurancedekho-mirror-hires.jpg" alt="InsuranceDekho creative: bold type reading Zoom into the mirror to see a reminder." width="480" height="458" loading="lazy" decoding="async"></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#E3AE3C" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 02 &middot; Insurance</span></span>
+            <h3>InsuranceDekho — #BharosaKarKeDekho</h3>
+            <p class="epcard-why">Nobody wakes up wanting to think about insurance. So the sentence had to sound like a thought, not an ad.</p>
+            <p class="epcard-result"><b>Result.</b> The hashtag carried topical, USP and moment posts, and the campaign film ran on the brand’s own handle.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/bioderma-feedback-loop/">
+          <div class="epcard-media"><img src="assets/work/insurancedekho-exist.webp" alt="A revision-tracked skincare social post." width="480" height="600" loading="lazy" decoding="async"></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#8FCDE8" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 03 &middot; Skincare</span></span>
+            <h3>Bioderma — seven months on retainer</h3>
+            <p class="epcard-why">Skincare social gets scrolled unless it teaches something and still looks like the brand.</p>
+            <p class="epcard-result"><b>Result.</b> 172 numbered rows tracked brief-to-approval across four monthly sheets, Oct 2023 – Jan 2024.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/content-strategy-wealth-fitness/">
+          <div class="epcard-media"><div class="also-media" style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--mint);border:var(--line) solid var(--ink)"><span class="ep-num" style="position:static">Goal &rarr; Bucket &rarr; Objective &rarr; Execution</span></div></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#7EC6B4" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 04 &middot; Strategy</span></span>
+            <h3>Strategy, not just posts</h3>
+            <p class="epcard-why">Two clients asked for posts. Neither had a reason for anyone to follow them.</p>
+            <p class="epcard-result"><b>Result.</b> Both documents descend goal → bucket → objective → execution. That structure is the deliverable.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/founder-voice-linkedin/">
+          <div class="epcard-media"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--cream2);border:var(--line) solid var(--ink);padding:16px;text-align:center;font-family:var(--display)">“Starting is intoxicating. Finishing is demanding.”</div></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#E8702A" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 05 &middot; Founder voice</span></span>
+            <h3>A founder’s LinkedIn, in her own voice</h3>
+            <p class="epcard-why">The brand account can sound like a brochure. The founder can’t — that’s the whole value of the post.</p>
+            <p class="epcard-result"><b>Result.</b> 20,331 words across six monthly sheets (Oct 2025 – Mar 2026), with the client’s replies inside the same document.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/hinglish-that-sells/">
+          <div class="epcard-media"><img src="assets/work/pigeon-khana.webp" alt="Cookware social post: In India we don’t ask khana khaya, we say khana kha ke jana." width="480" height="476" loading="lazy" decoding="async"></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#2F6E63" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 06 &middot; Cookware + lending</span></span>
+            <h3>Hinglish that sells</h3>
+            <p class="epcard-why">Hinglish only when the insight is actually cultural — never a translated line for flavour.</p>
+            <p class="epcard-result"><b>Result.</b> Two live posts show roughly 2.6k and 3k public likes in the captured screenshots.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/tata-steel-industrial-consulting/">
+          <div class="epcard-media"><img src="assets/media/tsic-digieshala-standee.webp" alt="Tata Steel Digi-e-Shala roll-up standee." width="480" height="960" loading="lazy" decoding="async"></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#7E8FA6" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 07 &middot; B2B industrial</span></span>
+            <h3>Tata Steel Industrial Consulting</h3>
+            <p class="epcard-why">Engineers read specifications, not stories. Take the jokes out, put the nouns in.</p>
+            <p class="epcard-result"><b>Result.</b> One verbal system carried across standees, brochures, emailers and social.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/four-languages-four-scripts/">
+          <div class="epcard-media"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--cream2);border:var(--line) solid var(--ink);padding:16px;text-align:center;font-family:var(--display)">Agenda + Focus, under every script</div></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#E8702A" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 08 &middot; Scripts</span></span>
+            <h3>Four languages, four scripts</h3>
+            <p class="epcard-why">Translate one script four times and everybody sounds like the same stranger.</p>
+            <p class="epcard-result"><b>Result.</b> Five scripts, four languages, with the rationale shipped inside the document.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/diagnostic-centre-growth-plan/">
+          <div class="epcard-media"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--mint);border:var(--line) solid var(--ink);padding:16px;text-align:center;font-family:var(--display)">5 lakh &rarr; 50,000 &rarr; 7–9,000 &rarr; 2,500</div></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#1F544C" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 09 &middot; Healthcare</span></span>
+            <h3>A diagnostic centre’s growth plan</h3>
+            <p class="epcard-why">A radiology clinic doesn’t grow by posting more. It grows by knowing its own addressable market.</p>
+            <p class="epcard-result"><b>Result.</b> The document runs problem → market size → competitive set → business model, in that order.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/fine-jewellery-house-style/">
+          <div class="epcard-media"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--cream2);border:var(--line) solid var(--ink);padding:16px;text-align:center;font-family:var(--display)">Motif &rarr; meaning &rarr; embodiment &rarr; spec</div></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#A52A24" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 10 &middot; Fine jewellery</span></span>
+            <h3>A house style for fine jewellery</h3>
+            <p class="epcard-why">Adjectives are free, so they’re worth nothing. Say what the piece is about first.</p>
+            <p class="epcard-result"><b>Result.</b> The same four-part structure held across 98 slides, without drifting.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/pride-and-pumpkin-magazine/">
+          <div class="epcard-media"><img src="assets/work/tp-pride-cover.webp" alt="Cover of the Pride & Pumpkin magazine." width="480" height="480" loading="lazy" decoding="async"></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#E3AE3C" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 11 &middot; Internal comms</span></span>
+            <h3>Pride &amp; Pumpkin — the agency’s Pride magazine</h3>
+            <p class="epcard-why">Colleagues don’t ask the question they’re afraid sounds naive, out loud.</p>
+            <p class="epcard-result"><b>Result.</b> Three pieces inside one campaign — cover, explainer, interview.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/shaze-luxury-gifting-calendar/">
+          <div class="epcard-media"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--cream2);border:var(--line) solid var(--ink);padding:16px;text-align:center;font-family:var(--display)">“Diwali is incomplete without a poker party…”</div></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#8FCDE8" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 12 &middot; Luxury giftware</span></span>
+            <h3>A dated editorial calendar for luxury gifting</h3>
+            <p class="epcard-why">Product-first gifting copy reads like a catalogue. Let the story earn the product.</p>
+            <p class="epcard-result"><b>Result.</b> Eleven long-form pieces across a ten-week run, each dated to a real occasion.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/amaraa-jewels-editorial-plan/">
+          <div class="epcard-media"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--mint);border:var(--line) solid var(--ink);padding:16px;text-align:center;font-family:var(--display)">20-item plan &rarr; 17 numbered blogs</div></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#D2372C" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 13 &middot; Editorial planning</span></span>
+            <h3>Plan first, then write seventeen blogs</h3>
+            <p class="epcard-why">Seventeen blogs on one category repeat themselves unless someone plans the angles first.</p>
+            <p class="epcard-result"><b>Result.</b> 17 numbered blogs, ~10,400 words, from a 20-item plan, none repeating an angle.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/primus-tea-website-framework/">
+          <div class="epcard-media"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--cream2);border:var(--line) solid var(--ink);padding:16px;text-align:center;font-family:var(--display)">“Sip before you commit!”</div></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#2F6E63" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 14 &middot; Website IA</span></span>
+            <h3>A tea brand’s website, page by page</h3>
+            <p class="epcard-why">Architecture before adjectives — decide what each page is for, first.</p>
+            <p class="epcard-result"><b>Result.</b> One framework document, page by page, that the site copy was then written to match.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/maple-performance-ad/">
+          <div class="epcard-media"><img src="assets/media/teampumpkin__maple-performance-ad-video.jpg" alt="Maple performance ad: flat-illustration explainer of an Apple reseller support flow." width="480" height="480" loading="lazy" decoding="async"></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#E8702A" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 15 &middot; Performance ad</span></span>
+            <h3>Maple — a 75-second performance ad</h3>
+            <p class="epcard-why">A 75-second ad has one job: problem to fix, without losing anyone at second twenty.</p>
+            <p class="epcard-result"><b>Result.</b> One produced 75-second ad, problem to product, no detours.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/funberg-proposal-format/">
+          <div class="epcard-media"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--cream2);border:var(--line) solid var(--ink);padding:16px;text-align:center;font-family:var(--display)">“I recommend a PDF plus a slideshow…”</div></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#7EC6B4" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 16 &middot; Business proposal</span></span>
+            <h3>Choosing the format before writing it</h3>
+            <p class="epcard-why">Sometimes the first job is choosing the document a client needs, not writing it.</p>
+            <p class="epcard-result"><b>Result.</b> The proposal states and justifies its own deliverable format before the pitch.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/talkcharge-origin-story/">
+          <div class="epcard-media"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--mint);border:var(--line) solid var(--ink);padding:16px;text-align:center;font-family:var(--display)">102 articles · 65 brands · 14 weeks</div></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#7E8FA6" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 17 &middot; Origin story</span></span>
+            <h3>102 articles, ~65 brands, one quarter</h3>
+            <p class="epcard-why">Nobody’s showreel opens with coupon articles on a daily deadline. Hers did.</p>
+            <p class="epcard-result"><b>Result.</b> 102 articles, ~59,500 words, ~65 brands, one quarter — counted from the filed documents.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+      <article class="epcard">
+        <a class="epcard-link" href="work/schbang-creative-spec/">
+          <div class="epcard-media"><div style="display:flex;align-items:center;justify-content:center;height:100%;background:var(--cream2);border:var(--line) solid var(--ink);padding:16px;text-align:center;font-family:var(--display)">“Ek Baar Judne par, tutega nahi saala!”</div></div>
+          <div class="epcard-body">
+            <span class="ep-head" style="margin-bottom:10px"><svg class="burst" viewBox="0 0 100 100" width="70" height="70" aria-hidden="true"><polygon points="50.0,0.0 58.3,24.3 79.4,9.5 71.8,34.1 97.6,34.5 77.0,50.0 97.6,65.5 71.8,65.9 79.4,90.5 58.3,75.7 50.0,100.0 41.7,75.7 20.6,90.5 28.2,65.9 2.4,65.5 23.0,50.0 2.4,34.5 28.2,34.1 20.6,9.5 41.7,24.3" fill="#1F544C" stroke="#211A12" stroke-width="3" stroke-linejoin="round"/></svg><span class="ep-num">Ep. 18 &middot; Creative spec</span></span>
+            <h3>A Fevicol radio spot, on total creative freedom</h3>
+            <p class="epcard-why">A test with no client and no brief is the only place you see full creative range.</p>
+            <p class="epcard-result"><b>Result.</b> One spec assignment, three formats, submitted and labelled SPEC throughout.</p>
+            <span class="epcard-cta">Read the episode &rarr;</span>
+          </div>
+        </a>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -1047,7 +556,7 @@ html.calm{scroll-behavior:auto}
       <li><b>A tea brand’s website, page by page</b>A site framework before a single line of copy: what each page is for, filtering logic, hover states, where the certifications sit. Ends on <i>“Sip before you commit!”</i></li>
       <li><b>Seventeen blogs, planned first</b>A twenty-item topic plan with a one-line angle under each title, written before the seventeen numbered posts it produced. Lab-grown diamonds, for a jewellery brand.</li>
       <li><b>A dated editorial run</b>Long-form for a luxury giftware brand across three months, every piece pegged to an occasion — Oktoberfest, the festive gifting season, Diwali — with the product inside the story rather than on top of it.</li>
-      <li><b>Where it started</b>December 2018, writing to daily deadlines: <b style="display:inline">100+ articles across 60+ brands in one quarter</b>, inside an editorial system with writer IDs, editor initials and word-count specs. The writing was early-career. The discipline is the point. None of it is shown here.</li>
+      <li><b>Where it started</b>December 2018, writing to daily deadlines: <b style="display:inline">102 articles across ~65 brands in about 14 weeks</b>, inside an editorial system with writer IDs, editor initials and word-count specs. The writing was early-career. The discipline is the point. None of it is shown here.</li>
     </ul>
   </div>
 </section>
@@ -1258,7 +767,7 @@ html.calm{scroll-behavior:auto}
       <div class="step"><div class="ic"><svg viewBox="0 0 64 64" width="54" height="54"><circle cx="28" cy="28" r="17" fill="#A9D8C6" stroke="#1E1A16" stroke-width="4"/><path d="M41 41 L57 57" stroke="#1E1A16" stroke-width="6" stroke-linecap="round"/></svg></div><h3>1 — I read before I write.</h3><p>Audience, competitors, the client’s own literature, the last six months of their feed. For skincare that meant ingredient decks. For steel it meant a plant’s vocabulary. The joke comes after the research, never instead of it.</p></div>
       <div class="step"><div class="ic"><svg viewBox="0 0 64 64" width="54" height="54"><rect x="8" y="10" width="48" height="44" fill="#F7E8C9" stroke="#1E1A16" stroke-width="4"/><path d="M8 24h48M24 24v30" stroke="#1E1A16" stroke-width="4"/></svg></div><h3>2 — I decide, then I make.</h3><p>Buckets before posts. Objectives before ideas. A page framework before website copy. If I can’t say what a piece is <i>for</i> in one line, it doesn’t get made.</p></div>
       <div class="step"><div class="ic"><svg viewBox="0 0 64 64" width="54" height="54"><path d="M12 52 L44 12 L54 22 L22 56 Z" fill="#E8A93A" stroke="#1E1A16" stroke-width="4"/><path d="M12 52l10 4" stroke="#1E1A16" stroke-width="4"/></svg></div><h3>3 — I use AI, and I’ll tell you where.</h3><p>It’s good for research passes, first drafts and reformatting. It is bad at the specific thing I’m paid for: knowing that <i>khana kha ke jana</i> is an insight and not a translation. So the drafts can be assisted. The judgment and the joke are mine, and I say which is which.</p></div>
-      <div class="step"><div class="ic"><svg viewBox="0 0 64 64" width="54" height="54"><path d="M8 50 L24 32 L36 42 L56 16" fill="none" stroke="#1E1A16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="56" cy="16" r="6" fill="#C9352E" stroke="#1E1A16" stroke-width="4"/></svg></div><h3>4 — I keep the feedback where you can see it.</h3><p>On the skincare retainer I logged 172 posts: concept, first draft, the brand’s note, the revision, the approved version. When a client said a peg wouldn’t land, that went in the sheet too. You should be able to see me get corrected. That’s the fastest way to know how I’ll work with you.</p></div>
+      <div class="step"><div class="ic"><svg viewBox="0 0 64 64" width="54" height="54"><path d="M8 50 L24 32 L36 42 L56 16" fill="none" stroke="#1E1A16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="56" cy="16" r="6" fill="#C9352E" stroke="#1E1A16" stroke-width="4"/></svg></div><h3>4 — I keep the feedback where you can see it.</h3><p>On the skincare retainer I logged 172 numbered rows: concept, first draft, the brand’s note, the revision, the approved version. When a client said a peg wouldn’t land, that went in the sheet too. You should be able to see me get corrected. That’s the fastest way to know how I’ll work with you.</p></div>
     </div>
   </div>
 </section>
@@ -1271,7 +780,7 @@ html.calm{scroll-behavior:auto}
       <p class="lede">I’m from Indore. I started freelancing in December 2018 — coupon articles, daily deadlines, an editor’s initials in every filename. Nobody’s showreel starts there. Mine did, and it taught me to file on time, which turns out to be half the job.</p>
       <p>Mumbai came next: agency side, at TeamPumpkin, 2021 to 2023. Insurance, cookware, lending, steel. That’s where I learned to write for a category that doesn’t want to be written about.</p>
       <p>Since 2023 I’ve run my own freelance practice — retainers, not gigs. Skincare, luxury, jewellery, tea, restaurants, a psychotherapist’s brochure, a diagnostic centre’s growth plan.</p>
-      <p>Now I’m at <b>Eventually Co</b>, and the job is bigger than copy. I write the content strategy — positioning, buckets, platform plans — and I’m on set directing the shoots that come out of it: doctors doing piece-to-camera, hotels, restaurants, founder portraits. Writing the script and then standing behind the camera while someone says it out loud changes how you write the next one.</p>
+      <p>Now I’m at <b>Eventually Co</b>, and the job is bigger than copy. I write the content strategy — positioning, buckets, platform plans — and I write for and attend the shoots that come out of it: doctors doing piece-to-camera, hotels, restaurants, founder portraits <span class="todo">confirm: on-set role — directed or supported</span>. Writing the script and then being there while someone says it out loud changes how you write the next one.</p>
       <p>And I’m doing a PGDM at Goa Institute of Management, in Operations and Finance. Not a career change — a modifier. I’d rather be the content person who can read the P&amp;L than the one who leaves the room when it comes up.</p>
       <p><span class="todo">confirm: the 2023–2024 period between TeamPumpkin and the current freelance / Eventually Co timeline — one honest sentence, whatever is true, belongs here</span></p>
     </div>
@@ -1300,7 +809,7 @@ html.calm{scroll-behavior:auto}
           <li>You send the brief. A paragraph is enough.</li>
           <li>I send back three questions. They are usually the three the brief avoided.</li>
           <li>First draft or first framework in <b><span class="todo">confirm: N</span> working days.</b></li>
-          <li>Two revision rounds are included, tracked in one document so nothing gets lost in chat.</li>
+          <li><span class="todo">confirm: N</span> revision rounds are included, tracked in one document so nothing gets lost in chat.</li>
         </ol>
       </div>
       <div class="wcard">
@@ -1315,7 +824,7 @@ html.calm{scroll-behavior:auto}
       <div class="wcard">
         <h3>Response time &amp; price</h3>
         <p>Response time: <span class="todo">confirm: e.g. same working day / within 24 hours</span></p>
-        <p>Per project or per month, depending on which one makes your budget easier to defend. Ask and I’ll send a number the same day. <span class="todo">confirm: response commitment</span></p>
+        <p>Per project or per month, depending on which one makes your budget easier to defend. Ask and I’ll send a number back. <span class="todo">confirm: response-time commitment, if any</span></p>
         <p style="margin-top:18px"><a class="btn" href="mailto:amitadongre.0303@gmail.com?subject=Project%20brief">Brief me on a project</a></p>
       </div>
     </div>
@@ -1391,119 +900,6 @@ html.calm{scroll-behavior:auto}
   </div>
 </dialog>
 
-<script>
-(function(){
-  var h=document.documentElement, k='amita-calm';
-  var still=window.matchMedia('(prefers-reduced-motion: reduce)');
-
-  /* ---- the six-second loops: never autoplay in calm / reduced-motion ---- */
-  var loops=[].slice.call(document.querySelectorAll('video.loop'));
-  function motionOff(){ return h.classList.contains('calm') || still.matches; }
-  function stop(v){
-    v.autoplay=false;
-    try{ v.pause(); }catch(e){}
-    try{ v.currentTime=0; v.load(); }catch(e){}   /* load() restores the poster frame */
-  }
-  function start(v){
-    v.autoplay=true;
-    var p=v.play(); if(p && p.catch) p.catch(function(){});
-  }
-  /* only the loops near the viewport are allowed to download and run — 21 of them on the page */
-  var near={}, io=null;
-  if('IntersectionObserver' in window){
-    io=new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        near[e.target.dataset.loopId]=e.isIntersecting;
-        if(motionOff()) return;
-        if(e.isIntersecting) start(e.target); else stop(e.target);
-      });
-    },{rootMargin:'320px 0px'});
-    loops.forEach(function(v,i){ v.dataset.loopId=i; near[i]=false; io.observe(v); });
-  }
-  function syncLoops(){
-    var off=motionOff();
-    loops.forEach(function(v,i){
-      if(off) stop(v);
-      else if(!io || near[v.dataset.loopId]) start(v);
-    });
-  }
-
-  /* ---- calm the cartoon ---- */
-  var b=document.querySelector('.calm-btn'), lbl=b.querySelector('.lbl');
-  function paint(on){
-    b.setAttribute('aria-pressed',on?'true':'false');
-    lbl.textContent = on ? 'Bring back the chaos' : 'Calm the cartoon';
-    b.setAttribute('data-short', on ? 'Chaos' : 'Calm');
-  }
-  try{ if(localStorage.getItem(k)==='1'){ h.classList.add('calm'); paint(true); } }catch(e){}
-  syncLoops();
-  if(still.addEventListener) still.addEventListener('change',syncLoops);
-  b.addEventListener('click',function(){
-    var on=h.classList.toggle('calm'); paint(on);
-    try{localStorage.setItem(k,on?'1':'0')}catch(e){}
-    syncLoops();
-  });
-
-  /* ---- click-to-enlarge lightbox (images and loops) ---- */
-  var dlg=document.getElementById('lightbox'), img=document.getElementById('lb-img'),
-      vid=document.getElementById('lb-vid'), cap=document.getElementById('lb-cap');
-  if(dlg && typeof dlg.showModal==='function'){
-    document.addEventListener('click',function(e){
-      var a=e.target.closest ? e.target.closest('a.zoom') : null;
-      if(!a) return;
-      e.preventDefault();
-      var fig=a.closest('figure'), fc=fig?fig.querySelector('figcaption'):null;
-      var media=a.querySelector('img,video');
-      var label=media ? (media.getAttribute('alt')||media.getAttribute('aria-label')||'') : '';
-      if(fc){ var cc=fc.cloneNode(true), bd=cc.querySelector('.badge');
-              if(bd && bd.parentNode) bd.parentNode.removeChild(bd);
-              cap.textContent=cc.textContent.replace(/\s+/g,' ').trim(); }
-      else { cap.textContent=label; }
-      if(a.hasAttribute('data-video')){
-        img.hidden=true; img.removeAttribute('src'); img.alt='';
-        vid.hidden=false;
-        vid.setAttribute('poster',a.getAttribute('data-poster')||'');
-        vid.setAttribute('aria-label',label);
-        vid.src=a.getAttribute('href');
-        vid.load();
-        if(!motionOff()){ var p=vid.play(); if(p&&p.catch) p.catch(function(){}); }
-      }else{
-        try{ vid.pause(); }catch(err){}
-        vid.hidden=true; vid.removeAttribute('src');
-        img.hidden=false; img.src=a.getAttribute('href'); img.alt=label;
-      }
-      dlg.showModal();
-    });
-    dlg.querySelector('.lb-close').addEventListener('click',function(){dlg.close()});
-    dlg.addEventListener('click',function(e){ if(e.target===dlg) dlg.close(); });
-    dlg.addEventListener('close',function(){
-      img.removeAttribute('src');
-      try{ vid.pause(); }catch(err){}
-      vid.removeAttribute('src');
-    });
-  }
-
-  /* ---- the cat's eyes follow the cursor (fine pointers only) ---- */
-  var cat=document.querySelector('.hero-cat');
-  var fine=window.matchMedia('(any-hover:hover) and (pointer:fine)');
-  if(cat && fine.matches && !still.matches){
-    var raf=0, mx=0, my=0;
-    window.addEventListener('mousemove',function(e){
-      mx=e.clientX; my=e.clientY;
-      if(raf) return;
-      raf=requestAnimationFrame(function(){
-        raf=0;
-        if(h.classList.contains('calm')){cat.style.setProperty('--px','0px');cat.style.setProperty('--py','0px');return}
-        var r=cat.getBoundingClientRect();
-        if(r.bottom<0||r.top>window.innerHeight) return;
-        var cx=r.left+r.width*0.5, cy=r.top+r.height*0.46;
-        var dx=mx-cx, dy=my-cy, d=Math.sqrt(dx*dx+dy*dy)||1, m=Math.min(1,d/260);
-        cat.style.setProperty('--px',(dx/d*6*m).toFixed(2)+'px');
-        cat.style.setProperty('--py',(dy/d*6*m).toFixed(2)+'px');
-      });
-    },{passive:true});
-  }
-})();
-</script>
+<script src="assets/site.js"></script>
 </body>
 </html>
