@@ -270,6 +270,7 @@ html.kbd .cursor{opacity:0}
   z-index:var(--z,3);
 }
 .obj-pop{
+  will-change:transform;
   transform:rotate(var(--rot)) scale(1);
   opacity:1;
   transition:transform var(--dur-pop) var(--ease-pop),opacity calc(var(--dur-pop) * .7) ease;
@@ -292,6 +293,7 @@ html.kbd .cursor{opacity:0}
 /* hover: level the rotation, grow, lift the object above its neighbours */
 .obj.is-on:hover,.obj.is-on:focus-within{z-index:40}
 .obj.is-on:hover .obj-pop,.obj.is-on:focus-within .obj-pop{
+  will-change:transform;
   transform:rotate(0deg) scale(var(--scale-obj-hover));
   transition-duration:var(--dur-obj-hover);
   transition-delay:0ms;
@@ -318,7 +320,7 @@ html.kbd .cursor{opacity:0}
 }
 .polaroid .slot span{
   font-family:var(--body);font-size:11px;line-height:1.5;
-  letter-spacing:.1em;text-transform:uppercase;color:rgba(243,239,228,.6);
+  letter-spacing:0;text-transform:none;color:#c6c3b9;
 }
 .polaroid .marker{
   position:absolute;left:0;right:0;bottom:2px;
@@ -343,7 +345,7 @@ html.kbd .cursor{opacity:0}
   background:var(--ivory);color:#15140F;padding:14px 15px 13px;
 }
 .tracker .n{font-family:var(--display);font-size:40px;line-height:.9;color:var(--red)}
-.tracker .k{font-family:var(--body);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#5D5A50;margin-top:4px}
+.tracker .k{font-family:var(--body);font-size:12px;letter-spacing:0;text-transform:none;color:#5D5A50;margin-top:4px}
 .tracker .lines{margin-top:10px;display:grid;gap:4px}
 .tracker .lines i{display:block;height:1px;background:#C9C3B2}
 .tracker .lines i:nth-child(2){width:78%}
@@ -416,7 +418,6 @@ html.kbd .cursor{opacity:0}
 
 /* ========================================================== statement === */
 .statement{padding:var(--section-space) 0}
-.statement .eyebrow{font-family:var(--hand);color:var(--yellow);font-size:clamp(24px,3vw,34px);line-height:1;margin-bottom:6px}
 .statement h1{margin-bottom:clamp(22px,3vw,38px)}
 .statement .cols{display:grid;gap:clamp(22px,4vw,64px);grid-template-columns:1fr}
 .statement .lede p:last-child{margin-bottom:0}
@@ -456,7 +457,7 @@ html.kbd .cursor{opacity:0}
 .card:hover .muted,.card:focus-visible .muted,
 .card:hover .small,.card:focus-visible .small{color:rgba(10,10,10,.78)}
 .card:hover .todo,.card:focus-visible .todo{color:rgba(10,10,10,.6);border-color:rgba(10,10,10,.28);background:rgba(10,10,10,.05)}
-.card:hover .card-num,.card:focus-visible .card-num{color:var(--red)}
+.card:hover .card-num,.card:focus-visible .card-num{color:var(--black)}
 /* the yellow fill has to take every glyph with it, inheritance or not */
 .card:hover h3,.card:focus-visible h3,
 .card:hover .card-read,.card:focus-visible .card-read,
@@ -473,7 +474,7 @@ html.kbd .cursor{opacity:0}
   ;
 }
 .card-num{
-  font-family:var(--display);font-size:12px;letter-spacing:.14em;
+  font-family:var(--display);font-size:12px;letter-spacing:0;
   color:var(--yellow);margin-bottom:8px;transition:color var(--dur-card-hover) ease;
 }
 .card h3{margin-bottom:10px}
@@ -537,7 +538,6 @@ html.kbd .cursor{opacity:0}
 .panel{
   padding:0;
 }
-.panel.is-in{opacity:1;transform:none}
 .panel .k{font-family:var(--display);font-size:18px;letter-spacing:0;color:var(--yellow);margin-bottom:12px}
 .panel p{font-size:16px;line-height:1.6;color:var(--ivory-dim)}
 .panel p:last-child{margin-bottom:0}
@@ -556,7 +556,7 @@ html.kbd .cursor{opacity:0}
   aspect-ratio:4/5;background:#242422;border:1px dashed rgba(243,239,228,.3);
   display:grid;place-items:center;padding:12px;text-align:center;
 }
-.filmstrip .frame span{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(243,239,228,.55);line-height:1.5}
+.filmstrip .frame span{font-size:12px;letter-spacing:0;text-transform:none;color:#c6c3b9;line-height:1.5}
 .notes{margin-top:20px;display:grid;gap:12px}
 .note{font-family:var(--hand);color:var(--yellow);font-size:clamp(19px,2vw,24px);line-height:1.08;display:flex;gap:10px;align-items:flex-start}
 .note svg{flex:0 0 34px;width:34px;height:24px;margin-top:4px;overflow:visible}
@@ -573,7 +573,6 @@ html.kbd .cursor{opacity:0}
   transform:rotate(var(--rot,0deg));
   margin:0;
 }
-.note-y.is-in{opacity:1}
 .note-y q{
   display:block;quotes:none;
   font-family:var(--display);font-size:clamp(16px,1.7vw,21px);line-height:1.2;letter-spacing:-.02em;
@@ -592,7 +591,6 @@ html.kbd .cursor{opacity:0}
 .step{
   position:relative;padding-left:0;
 }
-.step.is-in{opacity:1;transform:none}
 .step .n{font-family:var(--hand);color:var(--yellow);font-size:clamp(34px,4vw,52px);line-height:.9}
 .step .arw{width:58px;height:30px;overflow:visible;margin:2px 0 8px}
 .step .arw path{fill:none;stroke:var(--yellow);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke;stroke-dashoffset:0}
@@ -653,21 +651,21 @@ html.kbd .cursor{opacity:0}
 
 /* ============================================================ layout ==== */
 @media (min-width:720px){
-  .cards{grid-template-columns:repeat(2,1fr)}
-  .also-grid{grid-template-columns:repeat(2,1fr)}
-  .strip{grid-template-columns:repeat(3,1fr)}
-  .lines-wall{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .work-grid{grid-template-columns:repeat(3,1fr)}
-  .ways{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .also-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .strip{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .lines-wall{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .work-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ways{grid-template-columns:repeat(2,minmax(0,1fr))}
   .statement .cols{grid-template-columns:1.15fr .85fr}
   .about-grid{grid-template-columns:.85fr 1.15fr;align-items:start}
 }
 @media (min-width:1040px){
   .card{padding:20px 20px 22px}
-  .lines-wall{grid-template-columns:repeat(3,1fr)}
-  .steps{grid-template-columns:repeat(4,1fr)}
-  .also-grid{grid-template-columns:repeat(3,1fr)}
+  .lines-wall{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .also-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 
 /* -------------------------------------------- mobile: board becomes grid */
@@ -678,7 +676,7 @@ html.kbd .cursor{opacity:0}
     gap:26px 14px;align-items:start;
     padding:22px var(--gut) 64px;
   }
-  .board::before{display:none}
+  
   .obj{
     position:static;width:auto;transform:none;
     display:flex;flex-direction:column;
@@ -761,7 +759,6 @@ html.kbd .cursor{opacity:0}
 .cat{display:flex;flex-wrap:wrap;gap:4px 12px}
 .note-y cite span{display:block}
 .sticky .todo{color:#514d32;border-color:#797344;background:transparent}
-.card:hover .card-num,.card:focus-visible .card-num{color:var(--black)}
 .card:hover .todo,.card:focus-visible .todo,.tile:hover .todo,.tile:focus-visible .todo{color:#403c18}
 .seal-label{color:var(--ivory)}
 .row>span:last-child{min-width:0;overflow-wrap:anywhere;text-align:right}
@@ -779,10 +776,30 @@ html.kbd .cursor{opacity:0}
 .no-motion .row:hover,.no-motion .row:focus-visible{transform:none}
 @media(max-width:719px){
   .board{gap:40px 24px;padding:32px 28px 64px}
-  .obj-pop,.motion .obj:not(.is-on) .obj-pop{--rot:0deg}
+  .obj-pop{transform:rotate(calc(var(--rot) * .35))}
+  .motion .obj:not(.is-on) .obj-pop{transform:rotate(calc(var(--rot) * .35 - 6deg)) scale(.7)}
   .obj figcaption{font-size:20px}
   .row{flex-wrap:wrap}
   .note-y{transform:none}
   .filmstrip{transform:rotate(-1deg)}
   .no-motion .obj-pop,.no-motion .obj:hover .obj-pop,.no-motion .obj:focus-within .obj-pop{transform:none}
+}
+
+[hidden]{display:none!important}
+.cards>* ,.also-grid>* ,.tile>* ,.work-grid>*{min-width:0}
+.tile b,.tile .small{overflow-wrap:anywhere}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .doodle [data-d],.nav-ring path,.ring-svg path,.arrow path{stroke-dashoffset:0}
+  .doodle .f{opacity:.85}
+  .obj:hover .obj-pop,.obj:focus-within .obj-pop{transform:rotate(var(--rot))}
+  .row:hover,.row:focus-visible{transform:none}
+  html.cursor-on body,html.cursor-on body a,html.cursor-on body button{cursor:auto}
+}
+
+.more-bar:has([hidden]){display:none}
+@media(min-width:720px) and (max-width:1039px){
+  .obj{width:calc(var(--w) * .72)}
+  .obj figcaption{width:150px;font-size:18px}
+  .polaroid .marker{font-size:22px}
 }

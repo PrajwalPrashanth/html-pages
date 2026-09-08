@@ -36,7 +36,7 @@
        to be told its own rendered length. Until that happens `--len` falls back
        to 0 (no dashing at all), so a no-JS reader simply sees the finished ink.
        -------------------------------------------------------------------- */
-    var STROKES = ".doodle [data-d],.arrow path,.arw path,.ring-svg path,.nav-ring path";
+    var STROKES = ".doodle [data-d],.arrow path,.ring-svg path,.nav-ring path";
     function primeStrokes() {
       Array.prototype.forEach.call(document.querySelectorAll(STROKES), function (p) {
         var svg = p.ownerSVGElement;
@@ -69,7 +69,7 @@
     }
 
     /* ======================================================================
-       REDUCED MOTION — show every final state, wire nothing else.
+       REDUCED MOTION — final states, including live preference changes.
        ==================================================================== */
     function applyMotionPreference() {
       reduce = motionQuery.matches;
@@ -275,10 +275,13 @@
        10 · LOAD MORE — the Also strip rises in with the same stagger.
        ==================================================================== */
     if (moreBtn && also) {
+      also.hidden = true;
+      moreBtn.hidden = false;
       moreBtn.addEventListener("click", function () {
         also.hidden = false;
         moreBtn.setAttribute("aria-expanded", "true");
         var grid = also.querySelector("[data-stagger-also]");
+        if (grid) grid.getBoundingClientRect();
         requestAnimationFrame(function () {
           if (grid) revealGroup(Array.prototype.slice.call(grid.children), STAG_CARD);
         });
@@ -303,6 +306,9 @@
       Array.prototype.forEach.call(d.querySelectorAll("[data-ring]"), function (el) { el.classList.add("is-drawn"); });
       var a = d.getElementById("also");
       if (a) a.hidden = false;
+      var button = d.getElementById("loadmore");
+      if (button) button.hidden = true;
+      d.querySelectorAll("video").forEach(function (video) { video.pause(); video.autoplay = false; });
       d.documentElement.classList.remove("cursor-on", "motion");
       d.documentElement.classList.add("no-motion");
     } catch (e2) { /* nothing further to do */ }
