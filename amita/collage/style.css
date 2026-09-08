@@ -1,0 +1,609 @@
+/* ============================================================
+   E — COLLAGE.  A kraft-paper zine: cut, pasted, taped, drawn on.
+   Two faces only: Gochi Hand (marker display) + Karla (body).
+   ============================================================ */
+
+:root{
+  /* paper + ink */
+  --kraft:#EBD9B4;
+  --kraft-2:#E1CBA0;
+  --brown:#C9A97A;
+  --white:#FFFCF2;
+  --ink:#5B1F22;
+  --ink-2:#714338;
+  --ink-3:#7B4842;
+
+  /* cut-paper accents */
+  --pink:#F4A6B8;
+  --cobalt:#2A44B5;
+  --red:#D8322B;
+  --purple:#6D3CA8;
+  --green:#3E8E5E;
+
+  /* torn edges (generated, not hand-typed straight lines) */
+  --torn-1: polygon(0.0% 1.5%, 7.1% 0.8%, 14.3% 2.8%, 21.4% 0.5%, 28.6% 2.3%, 35.7% 1.7%, 42.9% 0.4%, 50.0% 2.2%, 57.1% 0.3%, 64.3% 1.9%, 71.4% 0.5%, 78.6% 0.6%, 85.7% 1.9%, 92.9% 3.5%, 100.0% 0.7%, 96.7% 11.1%, 98.3% 22.2%, 99.6% 33.3%, 98.1% 44.4%, 97.4% 55.6%, 99.7% 66.7%, 96.0% 77.8%, 99.2% 88.9%, 100.0% 97.0%, 92.9% 96.4%, 85.7% 96.3%, 78.6% 97.0%, 71.4% 99.1%, 64.3% 96.5%, 57.1% 98.1%, 50.0% 98.4%, 42.9% 97.3%, 35.7% 98.0%, 28.6% 96.1%, 21.4% 96.0%, 14.3% 96.6%, 7.1% 98.5%, 0.0% 97.5%, 1.5% 88.9%, 2.5% 77.8%, 2.0% 66.7%, 1.4% 55.6%, 3.4% 44.4%, 3.0% 33.3%, 1.2% 22.2%, 2.5% 11.1%);
+  --torn-2: polygon(0.0% 3.1%, 7.1% 3.6%, 14.3% 2.3%, 21.4% 2.3%, 28.6% 1.7%, 35.7% 4.7%, 42.9% 1.1%, 50.0% 0.4%, 57.1% 1.0%, 64.3% 1.0%, 71.4% 1.3%, 78.6% 1.0%, 85.7% 0.2%, 92.9% 1.3%, 100.0% 1.3%, 98.1% 11.1%, 96.3% 22.2%, 95.7% 33.3%, 96.3% 44.4%, 98.0% 55.6%, 97.2% 66.7%, 99.0% 77.8%, 99.3% 88.9%, 100.0% 97.4%, 92.9% 95.8%, 85.7% 98.9%, 78.6% 99.1%, 71.4% 97.3%, 64.3% 98.6%, 57.1% 96.8%, 50.0% 99.9%, 42.9% 99.5%, 35.7% 99.3%, 28.6% 100.0%, 21.4% 96.5%, 14.3% 98.0%, 7.1% 99.0%, 0.0% 99.3%, 1.7% 88.9%, 0.4% 77.8%, 2.8% 66.7%, 0.2% 55.6%, 3.2% 44.4%, 0.0% 33.3%, 2.0% 22.2%, 2.1% 11.1%);
+  --torn-3: polygon(0.0% 2.4%, 7.1% 2.6%, 14.3% 3.2%, 21.4% 1.5%, 28.6% 2.7%, 35.7% 3.4%, 42.9% 3.4%, 50.0% 1.3%, 57.1% 2.7%, 64.3% 2.6%, 71.4% 2.2%, 78.6% 3.6%, 85.7% 2.3%, 92.9% 2.0%, 100.0% 3.5%, 98.2% 11.1%, 97.2% 22.2%, 97.2% 33.3%, 97.8% 44.4%, 96.5% 55.6%, 98.1% 66.7%, 98.5% 77.8%, 97.6% 88.9%, 100.0% 98.8%, 92.9% 99.1%, 85.7% 98.0%, 78.6% 98.3%, 71.4% 96.7%, 64.3% 96.5%, 57.1% 99.2%, 50.0% 97.2%, 42.9% 96.9%, 35.7% 99.0%, 28.6% 98.5%, 21.4% 96.7%, 14.3% 97.3%, 7.1% 97.0%, 0.0% 97.1%, 0.7% 88.9%, 2.3% 77.8%, 1.6% 66.7%, 1.9% 55.6%, 1.3% 44.4%, 1.0% 33.3%, 0.8% 22.2%, 3.3% 11.1%);
+  --torn-4: polygon(0.0% 1.2%, 7.1% 2.2%, 14.3% 0.8%, 21.4% 3.5%, 28.6% 1.1%, 35.7% 2.4%, 42.9% 3.9%, 50.0% 1.8%, 57.1% 4.1%, 64.3% 3.1%, 71.4% 2.4%, 78.6% 2.7%, 85.7% 2.5%, 92.9% 1.6%, 100.0% 4.2%, 97.4% 11.1%, 99.7% 22.2%, 99.2% 33.3%, 95.9% 44.4%, 96.8% 55.6%, 97.7% 66.7%, 99.1% 77.8%, 96.5% 88.9%, 100.0% 98.3%, 92.9% 97.3%, 85.7% 98.9%, 78.6% 99.5%, 71.4% 98.8%, 64.3% 96.6%, 57.1% 98.8%, 50.0% 97.6%, 42.9% 99.1%, 35.7% 97.7%, 28.6% 99.4%, 21.4% 99.7%, 14.3% 99.1%, 7.1% 99.1%, 0.0% 99.1%, 2.6% 88.9%, 0.9% 77.8%, 4.1% 66.7%, 2.1% 55.6%, 0.3% 44.4%, 1.9% 33.3%, 1.9% 22.2%, 1.0% 11.1%);
+  --torn-5: polygon(0.0% 1.7%, 7.1% 0.6%, 14.3% 4.2%, 21.4% 2.8%, 28.6% 2.3%, 35.7% 3.2%, 42.9% 4.0%, 50.0% 3.1%, 57.1% 0.4%, 64.3% 4.7%, 71.4% 0.3%, 78.6% 0.4%, 85.7% 0.6%, 92.9% 1.8%, 100.0% 3.0%, 96.0% 11.1%, 96.1% 22.2%, 97.6% 33.3%, 99.6% 44.4%, 95.6% 55.6%, 99.8% 66.7%, 96.5% 77.8%, 99.7% 88.9%, 100.0% 96.4%, 92.9% 99.9%, 85.7% 100.0%, 78.6% 100.0%, 71.4% 98.5%, 64.3% 100.0%, 57.1% 99.2%, 50.0% 95.4%, 42.9% 97.8%, 35.7% 97.2%, 28.6% 97.2%, 21.4% 97.8%, 14.3% 97.8%, 7.1% 97.2%, 0.0% 96.0%, 1.8% 88.9%, 1.3% 77.8%, 4.0% 66.7%, 0.0% 55.6%, 0.4% 44.4%, 2.5% 33.3%, 0.1% 22.2%, 1.1% 11.1%);
+
+  /* scissor cuts round a photo — straighter facets than a tear */
+  --cut-1: polygon(0.0% 0.6%, 16.7% 1.3%, 33.3% 0.9%, 50.0% 1.4%, 66.7% 1.5%, 83.3% 0.2%, 100.0% 0.1%, 99.5% 16.7%, 98.3% 33.3%, 98.2% 50.0%, 99.9% 66.7%, 98.7% 83.3%, 100.0% 99.5%, 83.3% 98.7%, 66.7% 99.1%, 50.0% 98.0%, 33.3% 99.1%, 16.7% 99.6%, 0.0% 98.9%, 1.7% 83.3%, 1.6% 66.7%, 0.2% 50.0%, 1.8% 33.3%, 1.4% 16.7%);
+  --cut-2: polygon(0.0% 1.1%, 16.7% 1.5%, 33.3% 1.6%, 50.0% 0.4%, 66.7% 0.1%, 83.3% 0.9%, 100.0% 0.7%, 99.5% 16.7%, 99.2% 33.3%, 99.0% 50.0%, 98.9% 66.7%, 99.2% 83.3%, 100.0% 98.0%, 83.3% 98.7%, 66.7% 98.1%, 50.0% 99.7%, 33.3% 97.8%, 16.7% 99.5%, 0.0% 97.9%, 1.6% 83.3%, 0.8% 66.7%, 1.0% 50.0%, 2.0% 33.3%, 0.1% 16.7%);
+  --cut-3: polygon(0.0% 1.5%, 16.7% 1.6%, 33.3% 2.2%, 50.0% 0.5%, 66.7% 0.2%, 83.3% 1.9%, 100.0% 0.8%, 98.5% 16.7%, 99.5% 33.3%, 98.1% 50.0%, 99.7% 66.7%, 98.8% 83.3%, 100.0% 97.9%, 83.3% 99.7%, 66.7% 99.0%, 50.0% 97.9%, 33.3% 99.5%, 16.7% 99.4%, 0.0% 99.3%, 1.5% 83.3%, 2.3% 66.7%, 0.1% 50.0%, 2.2% 33.3%, 1.5% 16.7%);
+  --cut-4: polygon(0.0% 1.0%, 16.7% 1.3%, 33.3% 2.0%, 50.0% 0.5%, 66.7% 0.6%, 83.3% 0.2%, 100.0% 0.4%, 97.7% 16.7%, 98.0% 33.3%, 98.8% 50.0%, 99.9% 66.7%, 99.2% 83.3%, 100.0% 98.5%, 83.3% 98.6%, 66.7% 99.2%, 50.0% 98.4%, 33.3% 97.9%, 16.7% 99.6%, 0.0% 99.1%, 0.3% 83.3%, 0.3% 66.7%, 0.3% 50.0%, 2.2% 33.3%, 0.3% 16.7%);
+
+  /* washi tape: straight long edges, serrated short ends */
+  --tape-cut: polygon(0.0% 0.0%, 100.0% 0.0%, 96.7% 14.3%, 99.1% 28.6%, 96.4% 42.9%, 98.9% 57.1%, 96.5% 71.4%, 98.9% 85.7%, 100.0% 100.0%, 0.0% 100.0%, 2.6% 85.7%, 0.6% 71.4%, 3.7% 57.1%, 0.8% 42.9%, 3.7% 28.6%, 0.1% 14.3%);
+
+  --sticker: drop-shadow(3px 0 0 var(--white)) drop-shadow(-3px 0 0 var(--white))
+             drop-shadow(0 3px 0 var(--white)) drop-shadow(0 -3px 0 var(--white));
+  --lift: drop-shadow(6px 9px 6px rgba(60,26,20,.30));
+  --lift-hi: drop-shadow(9px 15px 10px rgba(60,26,20,.42));
+
+  --space: 8px;
+  --section-space: 64px;
+  --settle: 500ms cubic-bezier(.20,.86,.30,1.04);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+
+html{-webkit-text-size-adjust:100%;}
+html,body{max-width:100%;}
+
+body{
+  margin:0;
+  background:var(--kraft);
+  color:var(--ink-2);
+  font-family:"Karla","Helvetica Neue",Arial,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- crumpled kraft ------------------------------------ */
+/* two fixed layers: a low-frequency crease relief (soft-light) and
+   a fine paper grain (multiply). Both inline SVG, no image files. */
+body::before,body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+}
+body::before{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.011' numOctaves='5' seed='9' stitchTiles='stitch'/%3E%3CfeDiffuseLighting lighting-color='%23ffffff' surfaceScale='2.4' result='l'%3E%3CfeDistantLight azimuth='48' elevation='58'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='640' height='640' filter='url(%23c)'/%3E%3C/svg%3E");
+  background-size:640px 640px;
+  mix-blend-mode:soft-light;
+  opacity:.62;
+}
+body::after{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)' opacity='0.42'/%3E%3C/svg%3E");
+  background-size:220px 220px;
+  mix-blend-mode:multiply;
+  opacity:.28;
+}
+/* everything sits above the texture */
+.skip,header,main,footer,.switcher{position:relative;z-index:1;}
+
+/* ---------- type ---------------------------------------------- */
+h1,h2,h3,.marker{
+  font-family:"Gochi Hand","Comic Sans MS",cursive;
+  font-weight:400;
+  color:var(--ink);
+  text-transform:uppercase;
+  line-height:.9;
+  letter-spacing:.005em;
+  margin:0;
+  text-wrap:balance;
+  overflow-wrap:anywhere;
+}
+h1{font-size:clamp(52px,8vw,112px);}
+h2{font-size:clamp(40px,6.4vw,88px);}
+h3{font-size:clamp(28px,3.2vw,40px);line-height:1.05;}
+p{margin:0 0 16px;}
+h1 i,h2 i,h3 i{font-style:normal;}
+strong,b{font-weight:700;color:var(--ink);}
+em,i{font-style:italic;}
+blockquote{margin:0;}
+
+.lbl{
+  font-family:"Karla",sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.04em;text-transform:none;color:var(--ink-3);
+}
+
+/* run-in Why / What / How label, underlined in marker */
+.ri{
+  display:inline-block;
+  font-family:"Gochi Hand",cursive;
+  text-transform:uppercase;
+  font-size:1.08em;
+  color:var(--ink);
+  margin-right:.5em;
+  padding-bottom:5px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='18' viewBox='0 0 200 18'%3E%3Cpath d='M3 11.3 C50 6.4 110 16.1 197 7.0' fill='none' stroke='%235B1F22' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:left bottom;
+  background-size:100% 7px;
+}
+.ri--alt{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='18' viewBox='0 0 200 18'%3E%3Cpath d='M3 11.9 C50 4.5 110 13.6 197 9.5' fill='none' stroke='%23D8322B' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+a{color:var(--cobalt);}
+a:focus-visible,button:focus-visible,video:focus-visible,.cut a:focus-visible{
+  outline:3px solid var(--cobalt);outline-offset:3px;border-radius:2px;
+}
+
+.skip{
+  position:absolute;left:-9999px;top:8px;
+  background:var(--ink);color:var(--white);padding:10px 16px;
+  font-weight:700;text-decoration:none;
+}
+.skip:focus{left:12px;z-index:100;}
+
+.vh{
+  position:absolute!important;width:1px;height:1px;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;
+}
+
+/* ---------- the "to confirm" chip ----------------------------- */
+.todo{
+  display:inline-block;vertical-align:baseline;
+  font-family:"Karla",sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:0;text-transform:none;
+  color:var(--ink);background:var(--pink);
+  padding:2px 7px 1px;margin:0 2px;
+  border:1.5px solid var(--ink);
+  white-space:nowrap;
+}
+
+/* ---------- layout -------------------------------------------- */
+.zine{max-width:1240px;margin:0 auto;padding:0 20px;}
+.page{position:relative;padding:var(--section-space) 0;}
+.zine :is(.cover__type,.cover__art,.ep__body,.ep__media,.about__text,.about__art,.cv__cols,.cv__art),
+.work__grid > *, .contact__grid > *, .cv__cols > *{min-width:0;}
+
+
+/* ---------- paper blocks -------------------------------------- */
+.paper{
+  position:absolute;display:block;pointer-events:none;
+  background:var(--brown);
+  box-shadow:0 0 0 rgba(0,0,0,0);
+}
+.paper--pink{background:var(--pink);}
+.paper--cobalt{background:var(--cobalt);}
+.paper--red{background:var(--red);}
+.paper--purple{background:var(--purple);}
+.paper--green{background:var(--green);}
+.paper--white{background:var(--white);}
+.paper--kraft{background:var(--kraft-2);}
+.t1{clip-path:var(--torn-1);}
+.t2{clip-path:var(--torn-2);}
+.t3{clip-path:var(--torn-3);}
+.t4{clip-path:var(--torn-4);}
+.t5{clip-path:var(--torn-5);}
+
+/* a paper block you can put content on */
+.scrap{
+  position:relative;padding:28px 28px 32px;
+  isolation:isolate;
+  --paper:var(--kraft-2);
+  transform:none;
+}
+.scrap::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:var(--paper);clip-path:var(--torn-2);pointer-events:none;}
+.scrap--pink{--paper:var(--pink);}
+.scrap--green{--paper:var(--green);color:#0C2416;}
+.scrap--green .lbl,.scrap--green p,.scrap--green h3,.scrap--green .beat__n{color:#0C2416;}
+.scrap--white{--paper:var(--white);}
+.scrap--brown{--paper:var(--brown);}
+.scrap p{color:inherit;}
+.scrap--pink p,.scrap--pink .lbl{color:#4C1B22;}
+
+/* ---------- washi tape ---------------------------------------- */
+.tape{
+  position:absolute;display:block;pointer-events:none;
+  width:var(--w,120px);height:var(--h,30px);
+  left:var(--x,50%);top:var(--y,-14px);
+  transform:translateX(-50%) rotate(var(--tr,8deg));
+  clip-path:var(--tape-cut);
+  mix-blend-mode:multiply;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 2px, rgba(255,255,255,0) 2px 5px),
+    linear-gradient(180deg, rgba(255,255,255,.30), rgba(255,255,255,0) 45%, rgba(0,0,0,.06));
+  background-color:rgba(42,68,181,.34);
+  z-index:4;
+}
+.tape--cobalt{background-color:rgba(42,68,181,.34);}
+.tape--pink{background-color:rgba(244,166,184,.62);}
+.tape--red{background-color:rgba(216,50,43,.32);}
+.tape--green{background-color:rgba(62,142,94,.36);}
+.tape--purple{background-color:rgba(109,60,168,.32);}
+.tape--kraft{background-color:rgba(201,169,122,.62);}
+
+/* ---------- the cut-out --------------------------------------- */
+.cut{
+  position:relative;margin:0;
+  transform:rotate(var(--rot,0deg));
+  transition:transform var(--settle);
+  z-index:2;
+}
+.cut__o{
+  display:block;
+  filter:var(--sticker) var(--lift);
+  transition:transform 220ms ease, filter 220ms ease;
+}
+.cut__i{
+  position:relative;display:block;isolation:isolate;
+  clip-path:var(--cut-1);
+  background:var(--white);
+}
+.cut--c2 .cut__i{clip-path:var(--cut-2);}
+.cut--c3 .cut__i{clip-path:var(--cut-3);}
+.cut--c4 .cut__i{clip-path:var(--cut-4);}
+
+.cut__i img,.cut__i video{
+  display:block;width:100%;height:auto;
+  filter:grayscale(1) contrast(1.2);
+}
+/* halftone: black dot screen (multiply) + offset white dots (screen) */
+.cut__dots{
+  position:absolute;inset:0;pointer-events:none;
+  mix-blend-mode:multiply;opacity:.32;
+  background-image:radial-gradient(circle at 50% 50%, #000 1.05px, rgba(0,0,0,0) 1.35px);
+  background-size:5px 5px;
+}
+
+a.cut,.cut a{text-decoration:none;color:inherit;}
+.cut:hover .cut__o,.cut:focus-within .cut__o{
+  transform:translateY(-4px);
+  filter:var(--sticker) var(--lift-hi);
+}
+
+.cut figcaption,.capt{
+  margin-top:10px;font-size:12px;line-height:1.45;color:var(--ink-3);
+  max-width:34ch;
+}
+
+/* ---------- marker scribbles ---------------------------------- */
+.scribble{position:absolute;pointer-events:none;z-index:5;}
+.scribble path{
+  fill:none;stroke:var(--ink);stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.scribble--red path{stroke:var(--red);}
+.scribble--cobalt path{stroke:var(--cobalt);}
+
+/* ---------- buttons: paper slips ------------------------------ */
+.slips{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;}
+.slip{
+  position:relative;display:inline-block;
+  isolation:isolate;font-family:"Karla",sans-serif;font-weight:700;
+  font-size:16px;line-height:1.5;letter-spacing:0;
+  padding:16px 24px;text-decoration:none;
+  color:var(--ink);--slip-paper:var(--white);
+}
+.slip::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:var(--slip-paper);clip-path:var(--torn-4);pointer-events:none;}
+.slip--red{--slip-paper:var(--ink);color:var(--white);}
+.slip--cobalt{--slip-paper:var(--cobalt);color:var(--white);}
+.slip--pink{--slip-paper:var(--pink);color:var(--ink);}
+.slip-wrap{display:inline-block;max-width:100%;}
+
+/* inline text link with a marker underline */
+.mlink{
+  color:var(--ink);text-decoration:none;font-weight:700;
+  padding-bottom:3px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='18' viewBox='0 0 200 18'%3E%3Cpath d='M3 11.9 C50 4.5 110 13.6 197 9.5' fill='none' stroke='%232A44B5' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:left bottom;background-size:100% 7px;
+}
+.mlink:hover{color:var(--cobalt);}
+
+/* ============================================================
+   1 — COVER
+   ============================================================ */
+.page.cover{padding-top:32px;}
+.cover__top{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;margin-bottom:6px;
+}
+.cover__name{
+  font-family:"Gochi Hand",cursive;text-transform:uppercase;
+  font-size:20px;letter-spacing:.02em;color:var(--ink);
+}
+.cover__grid{display:grid;gap:32px;align-items:start;}
+.cover h1{margin:0 0 4px;}
+.cover h1 span{display:block;}
+.cover h1 .l2{margin-left:.06em;}
+.cover__lede{max-width:42ch;font-size:18px;margin-top:22px;}
+.cover__lede p:last-of-type{margin-bottom:0;}
+.reel{display:flex;flex-wrap:wrap;gap:4px 16px;margin:24px 0 0;
+  max-width:48ch;font-size:14px;line-height:1.5;color:var(--ink-3);}
+
+/* the photo collage — a relative box so everything scales to 360px */
+.collage{position:relative;aspect-ratio:5/5.6;width:100%;}
+.collage .cut{position:absolute;}
+.collage .paper{position:absolute;}
+
+/* ============================================================
+   2 — HELLO, I'M AMITA
+   ============================================================ */
+.about__grid{display:grid;gap:40px;align-items:start;}
+.about__text{max-width:60ch;}
+.portrait-slot{position:relative;aspect-ratio:4/5;width:100%;max-width:420px;margin-inline:auto;}
+.pol{
+  position:absolute;left:8%;top:8%;width:78%;
+  background:var(--white);padding:16px;
+  transform:rotate(-3.5deg);
+  
+  z-index:3;
+}
+.pol__win{
+  aspect-ratio:1/1.12;background:var(--kraft-2);
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:16px;
+}
+.pol__win span{font-size:12px;line-height:1.5;color:var(--ink-3);}
+.dotsq{
+  position:absolute;width:74px;height:74px;
+  background-image:radial-gradient(circle at 50% 50%, var(--red) 2.4px, rgba(0,0,0,0) 2.8px);
+  background-size:11px 11px;
+  z-index:1;
+}
+
+/* ============================================================
+   3 — WHY / WHAT / HOW
+   ============================================================ */
+.wwh{display:grid;gap:32px;margin-top:32px;}
+.wwh .scrap{padding:32px;transform:rotate(var(--rot,0deg));}
+.wwh h3{margin-bottom:12px;}
+.wwh .lbl{display:block;margin-bottom:8px;}
+
+/* ============================================================
+   4 — EPISODES
+   ============================================================ */
+.ep{position:relative;padding:48px 0;}
+.ep + .ep{margin-top:0;}
+.ep__grid{display:grid;gap:32px;align-items:start;}
+.ep__num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:66px;height:66px;border-radius:50%;
+  background:var(--red);color:var(--white);
+  font-family:"Gochi Hand",cursive;font-size:28px;line-height:1;
+  flex:none;
+}
+.ep--cobalt .ep__num{background:var(--cobalt);}
+.ep--purple .ep__num{background:var(--purple);}
+.ep--green .ep__num{background:var(--green);}
+.ep--pink .ep__num{background:var(--pink);color:var(--ink);}
+.ep__credit{display:flex;flex-wrap:wrap;gap:4px 16px;
+  font-size:14px;letter-spacing:0;color:var(--ink-3);margin:16px 0 24px;}
+.ep h3{margin:14px 0 0;max-width:20ch;}
+.ep__body p{margin-bottom:1.05em;}
+.ep__body{max-width:62ch;}
+.ep__media{position:relative;}
+.ep__stack{position:relative;aspect-ratio:1/1.02;width:100%;}
+.ep__stack .cut{position:absolute;}
+.ep__stack .paper{position:absolute;}
+.ep__row{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;}
+.ep__row .cut{width:calc(33.333% - 10px);min-width:96px;}
+.ep__more{margin-top:18px;}
+
+/* type-only exhibits */
+.chain{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 18px;}
+.chain span{
+  display:inline-block;padding:9px 14px 7px;background:var(--white);
+  clip-path:var(--torn-4);
+  font-family:"Gochi Hand",cursive;text-transform:uppercase;
+  font-size:18px;color:var(--ink);
+  transform:none;
+}
+.pull{
+  position:relative;background:var(--white);clip-path:var(--torn-1);
+  padding:26px 26px 22px;margin:0 0 18px;
+  transform:none;
+}
+.pull p{
+  font-family:"Gochi Hand",cursive;text-transform:uppercase;
+  font-size:clamp(20px,2.4vw,30px);line-height:1.02;color:var(--ink);
+  margin:0 0 8px;
+}
+.pull .lbl{display:block;}
+
+/* ============================================================
+   5 — ALSO
+   ============================================================ */
+.also{display:flex;flex-wrap:wrap;align-items:flex-start;gap:32px 26px;margin-top:34px;}
+.also__item{position:relative;min-width:0;}
+.also__item .cut{margin-bottom:12px;}
+.also__slab{
+  position:relative;aspect-ratio:1/1;display:flex;align-items:center;
+  justify-content:center;text-align:center;padding:18px;
+  background:var(--white);clip-path:var(--torn-3);
+  transform:rotate(var(--rot,0deg));
+  margin-bottom:12px;
+}
+.also__slab span{
+  font-family:"Gochi Hand",cursive;text-transform:uppercase;
+  font-size:19px;line-height:1.02;color:var(--ink);
+}
+.also h3{font-size:28px;margin-bottom:6px;}
+.also p{font-size:16px;line-height:1.5;margin-bottom:8px;}
+.also .part{font-size:16px;color:var(--ink-3);font-style:italic;}
+
+/* ============================================================
+   6 — LINES
+   ============================================================ */
+.lines{display:grid;gap:24px;margin-top:30px;align-items:start;}
+.line{
+  position:relative;background:var(--white);clip-path:var(--torn-2);
+  padding:26px 26px 20px;transform:rotate(var(--rot,0deg));
+}
+.line blockquote{
+  font-family:"Gochi Hand",cursive;text-transform:uppercase;
+  font-size:clamp(21px,2.3vw,31px);line-height:1.04;color:var(--ink);
+  margin:0 0 10px;
+}
+.line cite{display:flex;flex-wrap:wrap;gap:2px 12px;
+  font-style:normal;font-size:14px;letter-spacing:0;color:var(--ink-3);}
+.spec{
+  display:inline-block;background:var(--red);color:var(--white);
+  font-size:12px;font-weight:700;letter-spacing:0;text-transform:none;
+  padding:2px 7px 1px;margin-right:6px;
+}
+.lines-foot{margin-top:22px;font-size:12.5px;color:var(--ink-3);}
+
+/* ============================================================
+   7 — HOW I WORK
+   ============================================================ */
+.beats{display:grid;gap:24px;margin-top:30px;}
+.beat{position:relative;padding:32px;}
+.beat__n{
+  font-family:"Gochi Hand",cursive;font-size:56px;line-height:.8;
+  color:var(--ink);display:block;margin-bottom:6px;
+}
+.beat h3{font-size:clamp(21px,2.3vw,27px);margin-bottom:10px;}
+.beat p{font-size:16px;margin-bottom:0;}
+
+/* ============================================================
+   8 — EDUCATION / EXPERIENCE
+   ============================================================ */
+.cv{display:grid;gap:32px;align-items:start;}
+.cv__cols{display:grid;gap:32px;}
+.cv h3{font-size:clamp(26px,3vw,36px);margin-bottom:16px;}
+.cv ol{list-style:none;margin:0;padding:0;}
+.cv li{position:relative;padding:0 0 20px 20px;margin-bottom:18px;}
+.cv li::before{
+  content:"";position:absolute;left:0;top:9px;width:9px;height:9px;
+  background:var(--green);
+}
+.cv .cv__cols > div:first-child li::before{background:var(--brown);}
+.cv .yr{display:block;font-size:14px;font-weight:700;letter-spacing:0;text-transform:none;color:var(--ink-3);margin-bottom:3px;}
+.cv .role{font-family:"Gochi Hand",cursive;text-transform:uppercase;font-size:22px;color:var(--ink);display:block;line-height:1;margin-bottom:5px;}
+.cv p{font-size:16px;margin-bottom:0;}
+.cv__art{position:relative;aspect-ratio:1/1.6;width:100%;max-width:430px;margin-inline:auto;}
+.cv__art .cut{position:absolute;}
+
+/* ============================================================
+   8b — WORKING WITH ME
+   ============================================================ */
+.work__grid{display:grid;gap:24px;margin-top:30px;}
+.work h3{font-size:clamp(22px,2.4vw,29px);margin-bottom:12px;}
+.work ul,.work ol{margin:0;padding-left:20px;}
+.work li{margin-bottom:10px;font-size:16px;}
+.work p{font-size:16px;}
+
+/* ============================================================
+   9 — CONTACT
+   ============================================================ */
+.contact h2{font-size:clamp(46px,9vw,140px);}
+.contact__grid{display:grid;gap:32px;margin-top:26px;align-items:start;}
+.ways{display:grid;gap:18px;}
+.way{position:relative;padding:24px;}
+.way h3{font-size:24px;margin-bottom:8px;}
+.way p{font-size:16px;margin-bottom:0;}
+.reach{list-style:none;margin:22px 0 0;padding:0;}
+.reach li{margin-bottom:14px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;}
+.reach svg{flex:none;width:17px;height:17px;transform:translateY(2px);}
+.reach a{font-weight:700;overflow-wrap:anywhere;}
+.footnote{margin-top:34px;font-size:12.5px;color:var(--ink-3);max-width:62ch;}
+
+footer{padding:32px 0 112px;}
+footer .zine > p{font-size:12.5px;color:var(--ink-3);margin-bottom:.5em;}
+footer .zine > p.sign,.sign{
+  font-family:"Gochi Hand",cursive;text-transform:uppercase;
+  font-size:clamp(44px,11vw,170px);line-height:.82;color:var(--ink);
+  margin:0 0 18px;opacity:.9;
+}
+
+/* ---------- version switcher ---------------------------------- */
+.switcher{
+  position:fixed;left:14px;bottom:14px;z-index:40;
+  display:inline-block;
+  font-family:"Karla",sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:0;text-transform:none;text-decoration:none;
+  color:var(--white);background:var(--ink);
+  padding:9px 14px;border:2px solid var(--white);border-radius:999px;
+}
+.switcher:hover,.switcher:focus-visible{background:var(--cobalt);}
+
+/* ============================================================
+   MOTION
+   ============================================================ */
+.js .cut{transform:rotate(calc(var(--rot,0deg) + var(--kick,6deg)));}
+.js .is-in .cut,.js .cut.is-in{transform:rotate(var(--rot,0deg));}
+.js .cut{transition-delay:calc(var(--i,0) * 55ms);}
+
+.js .tape{opacity:0;transition:opacity 420ms ease;transition-delay:calc(260ms + var(--i,0) * 55ms);}
+.js .is-in .tape{opacity:1;}
+
+.js .scribble path{
+  stroke-dasharray:var(--len,700);stroke-dashoffset:var(--len,700);
+  transition:stroke-dashoffset 900ms ease-out 380ms;
+}
+.js .is-in .scribble path{stroke-dashoffset:0;}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .js .cut,.js .cut.is-in{transform:rotate(var(--rot,0deg));transition:none;}
+  .js .tape{opacity:1;transition:none;}
+  .js .scribble path{stroke-dasharray:none;stroke-dashoffset:0;transition:none;}
+  .cut__o,.slip{transition:none;}
+  .cut:hover .cut__o,.cut:focus-within .cut__o{transform:none;}
+    *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+}
+
+/* ============================================================
+   RESPONSIVE — mobile first above, wider below
+   ============================================================ */
+@media (min-width:760px){
+  .wwh{grid-template-columns:repeat(3,1fr);align-items:start;}
+  .wwh .scrap:nth-child(1){margin-top:14px;}
+  .wwh .scrap:nth-child(2){margin-top:-6px;}
+  .wwh .scrap:nth-child(3){margin-top:22px;}
+  .beats{grid-template-columns:repeat(2,1fr);}
+  .work__grid{grid-template-columns:repeat(3,1fr);}
+  .lines{grid-template-columns:repeat(2,1fr);}
+  .cv__cols{grid-template-columns:repeat(2,1fr);}
+  .ways{grid-template-columns:repeat(2,1fr);}
+  .contact__grid{grid-template-columns:1.25fr .95fr;}
+}
+
+@media (min-width:1000px){
+  body{font-size:17px;}
+  .zine{padding:0 40px;}
+  :root{--section-space:80px;}
+  .cover__grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;}
+  .cover__art{grid-column:1;grid-row:1;}
+  .cover__type{grid-column:2;grid-row:1;}
+  .about__grid{grid-template-columns:1.2fr .8fr;gap:56px;}
+  .ep__grid{grid-template-columns:1.05fr .95fr;gap:52px;}
+  .ep:nth-child(even) .ep__body{grid-column:2;grid-row:1;}
+  .ep:nth-child(even) .ep__media{grid-column:1;grid-row:1;}
+  .lines{grid-template-columns:repeat(3,1fr);}
+  .beats{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .cv{grid-template-columns:1.35fr .65fr;gap:52px;}
+}
+
+@media (max-width:759px){
+  .wwh .scrap,.line,.also__slab,.pull{transform:rotate(calc(var(--rot,0deg) * .35));}
+  .cover__lede{font-size:17px;}
+  .collage{aspect-ratio:5/5.2;}
+  .ep__row .cut{width:calc(50% - 7px);}
+  .also{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .switcher{font-size:11px;padding:8px 11px;}
+}
+
+/* Small type is reserved for captions; long words never widen a grid track. */
+.line blockquote,.also__slab,.chain{overflow-wrap:anywhere;}
+.line blockquote{line-height:1.15;text-wrap:balance;}
+.agency-heading{margin-top:48px;}
+.more-work{display:grid;gap:16px;margin:48px 0 0;padding-left:20px;max-width:65ch;}
+.work .scrap,.contact .scrap,.beat,.ep__media > .scrap{transform:none;}
+.contact .ways{grid-template-columns:1fr;}
+.contact h2{font-size:clamp(40px,6.4vw,88px);}
+.local-switcher{position:fixed;left:14px;bottom:14px;z-index:41;background:var(--ink);color:var(--white);padding:8px 16px;border-radius:999px;}
+.no-js .switcher{display:none;}
+@media (max-width:479px){
+  .also{grid-template-columns:1fr;gap:40px;}
+  .also__item > .cut,.also__slab{max-width:240px;margin-inline:auto;}
+  .also__item > .tape{--x:40%!important;--w:96px!important;}
+  .ep h3{font-size:28px;}
+}
