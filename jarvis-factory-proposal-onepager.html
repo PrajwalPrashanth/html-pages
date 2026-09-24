@@ -150,7 +150,7 @@ h2 .n{font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--rust);
       <div class="o"><span class="k">01</span><div><b>You see what really runs, and what only looks like it runs.</b>
         <div class="eng">visual maps of your architecture and infrastructure: code, agents, rules, runners, where credentials live, spend · checked against the system itself, not session reports · we walk through them together and take the calls</div></div></div>
       <div class="o"><span class="k">02</span><div><b>The blockers with the best payback are cleared first.</b>
-        <div class="eng">ranked by payback once mapped. Already visible: production admin keys reachable by PR code and agent sessions · 951 runs a day on one runner · auto-revert switched off · no tested restore</div></div></div>
+        <div class="eng">ranked by payback once mapped. Already visible: production admin keys reachable by PR code and agent sessions · 951 runs a day on one runner · automatic undo of bad changes switched off · no tested restore</div></div></div>
       <div class="o"><span class="k">03</span><div><b>Monitoring of what you see, and what you don't.</b>
         <div class="eng">first version: runs, queues, runners, failures, silently skipped checks · decision-to-live time, context per session, usage per change · becomes the build's baseline</div></div></div>
       <div class="eff"><div class="t">Where the pilot's time goes (estimate)</div>
@@ -181,7 +181,7 @@ h2 .n{font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--rust);
   <h2><span class="n">4</span>Built for Jarvis, not installed <span class="small" style="font-family:'Albert Sans',sans-serif;font-weight:400">· research and exploration are part of the work, inside the fee</span></h2>
   <div class="rd3">
     <div class="hw"><h4>Build on what Jarvis already knows</h4><p>Instead of re-reading <b class="mono">~190k</b> tokens every session, agents get <b>the knowledge they need</b>: what Jarvis does and what you've decided, kept current.</p></div>
-    <div class="hw"><h4>Choose models and tools by results</h4><p><b>Head-to-head trials on your own changes</b> across Claude Code, Codex, Cursor and other models, incl. Kimi and GLM. Measured evidence decides who does what.</p></div>
+    <div class="hw"><h4>Choose models and tools by results</h4><p><b>Head-to-head trials on your own changes</b>: Claude Code, Codex, Cursor, Kimi, GLM, and the new ones that land every week (this week: Jev, GPT Luna). Measured evidence decides who does what.</p></div>
     <div class="hw"><h4>Tested fallbacks</h4><p>If a model, vendor or runner fails or changes terms, <b>work moves to a tested fallback</b>. How close it gets depends on that vendor; where none exists, it stops safely and tells you.</p></div>
   </div>
   <div class="yours" style="border-left-color:var(--pine)">    <div class="yg">
@@ -200,7 +200,7 @@ h2 .n{font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--rust);
     <div class="terms">Before kickoff: one access prompt, and we confirm the date together. Pilot paid upfront; build agreed after the pilot. Your accounts, code and records stay yours, exportable.</div>
   </div>
 
-  <div class="stamp">/Users/prajwal/abhinav-daga/docs/jarvis-factory-proposal-onepager.html · 2026-09-24 · draft v4.8 (scope/breakage note moved under Build; basis = handoffs + calls) · sources: plan-v3.1, mirror assessment v1.2, calls 8 &amp; 12 Sep · reviews/proposal-v2/</div>
+  <div class="stamp">/Users/prajwal/abhinav-daga/docs/jarvis-factory-proposal-onepager.html · 2026-09-24 · v4.9 (weekly new tools line; plain-English pass) · sources: plan-v3.1, mirror assessment v1.2, calls 8 &amp; 12 Sep · reviews/proposal-v2/</div>
 </div>
 </body>
 </html>
