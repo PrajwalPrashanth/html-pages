@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jarvis factory: pilot and build proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Albert+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f3ec; --paper2:#efe9de; --ink:#26221b; --ink2:#5c554a;
+  --rust:#b0492a; --rust-soft:#f0ddd4; --pine:#2e5c47; --pine-soft:#dde8e1;
+  --line:#d9d1c2; --card:#fffdf8; --gold:#c08a2d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Albert Sans',sans-serif;line-height:1.45;font-size:14.5px}
+.wrap{max-width:980px;margin:0 auto;padding:36px 32px 40px}
+h1,h2,h3{font-family:'Fraunces',serif}
+.kicker{font-family:'Spline Sans Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:10px}
+h1{font-size:2.05rem;font-weight:700;line-height:1.12;margin-bottom:6px}
+.sub{color:var(--ink2);font-size:1rem;max-width:760px}
+.mono{font-family:'Spline Sans Mono',monospace}
+h2{font-size:1.12rem;font-weight:600;margin:20px 0 8px;display:flex;align-items:baseline;gap:10px}
+h2 .n{font-family:'Spline Sans Mono',monospace;font-size:12px;color:var(--rust);border:1.5px solid var(--rust);border-radius:6px;padding:1px 7px}
+.lede{color:var(--ink2);font-size:.88rem;margin:-4px 0 8px}
+/* today strip */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat .v{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:700;color:var(--rust);line-height:1.15}
+.stat .l{font-size:.78rem;color:var(--ink2)}
+/* milestones */
+.ms{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.m{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column}
+.m.pilot{border-top:4px solid var(--rust)}
+.m.build{border-top:4px solid var(--pine)}
+.m .hd{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:2px}
+.m .hd h3{font-size:1.15rem}
+.m .price{font-family:'Spline Sans Mono',monospace;font-weight:600;font-size:.95rem}
+.m.pilot .price{color:var(--rust)} .m.build .price{color:var(--pine)}
+.m .when{font-family:'Spline Sans Mono',monospace;font-size:.7rem;color:var(--ink2);letter-spacing:.04em;margin-bottom:8px}
+.m .promise{font-size:.9rem;color:var(--ink2);margin-bottom:8px;font-style:italic}
+.o{display:grid;grid-template-columns:22px 1fr;gap:8px;padding:7px 0;border-top:1px dashed var(--line)}
+.o .k{font-family:'Spline Sans Mono',monospace;font-size:.75rem;font-weight:700;color:var(--ink2);padding-top:2px}
+.o b{display:block;font-size:.95rem}
+.o .eng{font-family:'Spline Sans Mono',monospace;font-size:.7rem;color:var(--ink2);line-height:1.45;margin-top:2px}
+.bill{margin-top:auto;padding-top:8px}
+.billbox{background:var(--paper2);border-radius:8px;padding:8px 10px;font-size:.8rem}
+.billbox .mono{font-weight:600}
+.gate{background:var(--pine-soft);border-left:3px solid var(--pine);border-radius:0 8px 8px 0;padding:7px 10px;font-size:.82rem;margin-top:8px}
+.gate b{color:var(--pine)}
+.m.pilot .gate{background:var(--rust-soft);border-left-color:var(--rust)}
+.m.pilot .gate b{color:var(--rust)}
+/* how we work */
+.how{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.hw{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.hw h4{font-family:'Fraunces',serif;font-size:.95rem;margin-bottom:3px}
+.hw p{font-size:.8rem;color:var(--ink2)}
+/* fee + caution */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.fee{background:var(--card);border:2px solid var(--pine);border-radius:12px;padding:12px 14px;font-size:.84rem}
+.fee .tag,.callout .tag{font-family:'Spline Sans Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:5px}
+.fee .tag{color:var(--pine)}
+.fee ul,.callout ul{margin:4px 0 0 16px} .fee li,.callout li{margin-bottom:3px}
+.callout{background:var(--rust-soft);border-left:3px solid var(--rust);border-radius:0 12px 12px 0;padding:12px 14px;font-size:.84rem}
+.callout .tag{color:var(--rust)}
+.callout b{color:var(--rust)}
+.reco{background:#221f1a;color:#efe9de;border-radius:14px;padding:14px 20px;margin-top:14px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.reco .ask{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600}
+.reco .terms{font-size:.8rem;color:#cfc6b6;max-width:520px}
+.small{font-size:.78rem;color:var(--ink2)}
+.yours{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:10px 14px;margin-top:10px}
+.yours .tag{font-family:'Spline Sans Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px}
+.yg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;font-size:.82rem;color:var(--ink2)}
+.yg b{color:var(--ink)}
+.rd{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rd .hw{border-left:4px solid var(--pine);border-radius:0 10px 10px 0}
+.how3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.rd3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.rd3 .hw{border-left:4px solid var(--pine);border-radius:0 10px 10px 0}
+.m .promise{font-size:.84rem;color:var(--ink2);margin:0 0 6px;font-style:normal}
+.eff{margin-top:8px}
+.eff .t{font-family:'Spline Sans Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:3px}
+.eff .bar{height:14px;border-radius:5px;display:flex;overflow:hidden;border:1px solid var(--line)}
+.eff .bar span{display:block;height:100%}
+.eff .keys{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:.7rem;color:var(--ink2);margin-top:4px}
+.eff .keys i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.c1{background:#2e5c47}.c2{background:#6f9a84}.c3{background:#c08a2d}.c4{background:#b0492a}.c5{background:#d9c9ae}
+.want{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.w{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:.84rem;display:flex;flex-direction:column;gap:4px}
+.w q{font-family:'Fraunces',serif;font-size:.88rem;line-height:1.25;quotes:"“" "”"}
+.w .to{font-family:'Spline Sans Mono',monospace;font-size:.64rem;letter-spacing:.06em;color:var(--ink2);margin-top:auto}
+.w .to b{color:var(--rust)} .w .to b.bd{color:var(--pine)}
+.wfoot{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:7px 12px;margin-top:8px;font-size:.82rem;color:var(--ink2)}
+.wfoot b{color:var(--ink)}
+.scope{background:var(--pine-soft);border-radius:8px;padding:6px 9px;font-size:.78rem;color:var(--ink);margin-bottom:4px}
+.scope b{color:var(--pine)}
+.stamp{font-family:'Spline Sans Mono',monospace;font-size:.66rem;color:var(--ink2);margin-top:14px}
+@media screen and (max-width:760px){.want{grid-template-columns:1fr}.rd3{grid-template-columns:1fr}.rd,.how3{grid-template-columns:1fr}.yg{grid-template-columns:1fr}.stats,.how{grid-template-columns:1fr 1fr}.ms,.two{grid-template-columns:1fr}}
+@media print{
+  @page{size:A4;margin:5mm}
+  html{font-size:9.5px}
+  body{font-size:10.2px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{padding:0;max-width:none}
+  .kicker{margin-bottom:5px}
+  h1{font-size:1.45rem} .sub{font-size:.86rem}
+  h2{margin:6px 0 4px} .lede{margin:-2px 0 5px}
+  .stat{padding:5px 9px} .stat .v{font-size:1.05rem}
+  .stats,.ms,.rd,.how3,.two{gap:7px} .want{gap:6px} .how3,.two,.yours{margin-top:7px}
+  .m{padding:9px 12px} .m .when{margin-bottom:3px} .o{padding:4px 0}
+  .bill{padding-top:5px} .billbox{padding:6px 9px} .gate{margin-top:5px;padding:5px 9px}
+  .hw{padding:7px 10px} .yours{padding:7px 12px} .fee,.callout{padding:8px 12px}
+  .reco{margin-top:6px;padding:5px 14px;gap:10px} .reco .ask{font-size:1rem} .reco .terms{max-width:62%;font-size:.74rem}
+  .rd3{gap:8px} .eff{margin-top:5px} .w{padding:6px 10px} .wfoot{padding:6px 11px;margin-top:6px}
+  .m,.hw,.fee,.callout,.reco,.yours{break-inside:avoid}
+  .stamp{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Proposal · Jarvis software factory · Prajwal → Abhinav · 24 Sep 2026</div>
+  <h1>“A ruling lands without me touching anything but the decision.”</h1>
+  <p class="sub"><b>Your words, your 90-day goal.</b> First I map your system and clear the fastest-payback blockers. Then you get <b>your own software factory</b>.</p>
+
+  <h2><span class="n">1</span>What you're after, in your words: we agree this first</h2>
+  <div class="want">
+    <div class="w"><q>A ruling lands without me touching anything but the decision.</q><span class="to">→ <b>pilot</b> clears the way · <b class="bd">build</b> delivers</span></div>
+    <div class="w"><q>The five foundation proofs read PASS with drill dates.</q><span class="to">→ <b class="bd">build</b></span></div>
+    <div class="w"><q>Teach me a little bit also on basics… and then set it up in the right way.</q><span class="to">→ <b>pilot</b> + <b class="bd">build</b> calls</span></div>
+    <div class="w"><q>Pasting a ruling from one chat into another and waiting to learn whether it ran.</q><span class="to">→ <b>pilot</b> measures it · <b class="bd">build</b> removes it</span></div>
+    <div class="w"><q>Unacceptable: a change lands that breaks main or touches data without approval.</q><span class="to">→ <b>pilot</b> + <b class="bd">build</b></span></div>
+    <div class="w"><q>Refused: anything post-paid without our own ceiling… that trains on our inputs… that can't be left in a day.</q><span class="to">→ throughout: you approve all spend · fallbacks, exportable</span></div>
+  </div>
+  <div class="wfoot">From your 15 Sep answers and 12 Sep call. <b>Your stop signs:</b> the machine eating its own throughput without shipping, a proof that can't pass, a cost that can't reach its floor. If one shows, we stop and decide together. <b>Add your list of the Jarvis changes you want shipped</b>: we check each is worth the effort and agree it before the build.</div>
+
+  <h2><span class="n">2</span>What's underneath: the size of the job</h2>
+  <p class="lede"><b>Most of the work is verifying what actually runs.</b> The diagnosis read a partial copy of your repo; the pilot checks the rest.</p>
+  <div class="stats">
+    <div class="stat"><div class="v">~197k</div><div class="l">lines of code, 20 CI jobs and 454 test files <b>read so far</b></div></div>
+    <div class="stat"><div class="v">9</div><div class="l">places the code no longer matches what your sessions report: <b>the system moved faster than its notes</b></div></div>
+    <div class="stat"><div class="v">951</div><div class="l">workflow runs in one day on <b>a single runner</b> (15 Sep)</div></div>
+    <div class="stat"><div class="v">not yet seen</div><div class="l">your ~100 rules, agent instructions, <b>runtime, settings and bills</b></div></div>
+  </div>
+
+  <h2><span class="n">3</span>Two steps: unblock, then your own factory</h2>
+  <div class="ms">
+    <div class="m pilot">
+      <div class="hd"><h3>Pilot: understand and unblock</h3><span class="price">₹60,000 · fixed</span></div>
+      <div class="when">2 WEEKS · YOUR WHOLE SYSTEM · HIGHEST PAYBACK FIRST</div>
+      <div class="o"><span class="k">01</span><div><b>You see what really runs, and what only looks like it runs.</b>
+        <div class="eng">visual maps of your architecture and infrastructure: code, agents, rules, runners, where credentials live, spend · checked against the system itself, not session reports · we walk through them together and take the calls</div></div></div>
+      <div class="o"><span class="k">02</span><div><b>The blockers with the best payback are cleared first.</b>
+        <div class="eng">ranked by payback once mapped. Already visible: production admin keys reachable by PR code and agent sessions · 951 runs a day on one runner · auto-revert switched off · no tested restore</div></div></div>
+      <div class="o"><span class="k">03</span><div><b>Monitoring of what you see, and what you don't.</b>
+        <div class="eng">first version: runs, queues, runners, failures, silently skipped checks · decision-to-live time, context per session, usage per change · becomes the build's baseline</div></div></div>
+      <div class="eff"><div class="t">Where the pilot's time goes (estimate)</div>
+        <div class="bar"><span class="c1" style="width:35%"></span><span class="c5" style="width:25%"></span><span class="c4" style="width:25%"></span><span class="c3" style="width:15%"></span></div>
+        <div class="keys"><span><i class="c1"></i>mapping &amp; visual maps 35%</span><span><i class="c5"></i>calls &amp; async 25%</span><span><i class="c4"></i>unblocking 25%</span><span><i class="c3"></i>monitoring 15%</span></div></div>
+      <div class="bill"><div class="gate"><b>Then you decide.</b> You keep the maps, fixes, monitoring and a build plan from real data, even if you stop here. Fixes needed to meet these outcomes stay inside ₹60,000.</div></div>
+    </div>
+
+    <div class="m build">
+      <div class="hd"><h3>Build: your own software factory</h3><span class="price">₹2,00,000 · fixed</span></div>
+      <div class="when">4–6 WEEKS · AFTER THE PILOT · 50% AT START, 50% WHEN DONE</div>
+      <div class="scope"><b>Built on your current handoffs and our calls, so the scope isn't fully clear yet:</b> it's research and figuring out, then clearing and building. Some attempts will fail and things will break on the way; every break happens where it can be stopped and undone, never silently in your live product.</div>
+      <div class="o"><span class="k">01</span><div><b>More work moving at once.</b>
+        <div class="eng">several changes built in parallel, not one queue, measured against the pilot baseline</div></div></div>
+      <div class="o"><span class="k">02</span><div><b>Faster and cheaper per change.</b>
+        <div class="eng">time: runners busy, stuck jobs recovered · context: agents read only what a change needs · cost: models chosen on measured quality and cost per change</div></div></div>
+      <div class="o"><span class="k">03</span><div><b>A factory that keeps running when something fails.</b>
+        <div class="eng">fallbacks when a model, vendor or runner fails · one card per change (examples + a visualisation of what will happen) · specialist agents build and review · five proofs drilled</div></div></div>
+      <div class="o"><span class="k">04</span><div><b>You see what's happening, and I check it every two weeks.</b>
+        <div class="eng">pilot maps, monitoring and fixes upgraded as needed · your dashboard: decisions, what's live, what's stuck, usage · my review every two weeks, as you suggested on 12 Sep</div></div></div>
+      <div class="eff"><div class="t">Where the build's time goes (estimate)</div>
+        <div class="bar"><span class="c1" style="width:25%"></span><span class="c2" style="width:25%"></span><span class="c4" style="width:20%"></span><span class="c5" style="width:20%"></span><span class="c3" style="width:10%"></span></div>
+        <div class="keys"><span><i class="c1"></i>re-architecture 25%</span><span><i class="c2"></i>parallel &amp; experiments 25%</span><span><i class="c4"></i>fallbacks 20%</span><span><i class="c5"></i>calls 20%</span><span><i class="c3"></i>dashboard 10%</span></div></div>
+      <div class="bill"><div class="gate"><b>Done when</b> a ruling lands without you relaying it, your agreed list is live, and the five proofs PASS with dates.</div></div>
+    </div>
+  </div>
+
+  <h2><span class="n">4</span>Built for Jarvis, not installed <span class="small" style="font-family:'Albert Sans',sans-serif;font-weight:400">· research and exploration are part of the work, inside the fee</span></h2>
+  <div class="rd3">
+    <div class="hw"><h4>Build on what Jarvis already knows</h4><p>Instead of re-reading <b class="mono">~190k</b> tokens every session, agents get <b>the knowledge they need</b>: what Jarvis does and what you've decided, kept current.</p></div>
+    <div class="hw"><h4>Choose models and tools by results</h4><p><b>Head-to-head trials on your own changes</b> across Claude Code, Codex, Cursor and other models, incl. Kimi and GLM. Measured evidence decides who does what.</p></div>
+    <div class="hw"><h4>Tested fallbacks</h4><p>If a model, vendor or runner fails or changes terms, <b>work moves to a tested fallback</b>. How close it gets depends on that vendor; where none exists, it stops safely and tells you.</p></div>
+  </div>
+  <div class="yours" style="border-left-color:var(--pine)">    <div class="yg">
+      <div><b>How we work: live calls, a big part of the work.</b> Several a week in the pilot as we map and decide; at least weekly in the build as we optimise.</div>
+      <div><b>Async on WhatsApp, throughout.</b> Heaviest in the pilot. One action per message, plus the dashboard.</div>
+      <div><b>You learn as it's built.</b> Each call covers one basic on your own system: a PR, a test, a deploy, how to read a card.</div>
+    </div>
+  </div>
+  <div class="fee" style="margin-top:8px"><span class="tag">Fixed fee for the outcome, not an hourly meter</span>
+    <b>Surprises are part of this kind of work.</b> I prepare as well as I can and each fee carries a buffer; if a surprise outgrows it, you hear early, and nothing extra happens without your yes. The fees cover mapping, research, experiments, redesign, calls and our back-and-forth, plus your agreed list. <b>Tool and model usage is paid by you directly</b>, with your OK on any new spend; vendor terms can change sharply, and the fallbacks absorb that.
+    <div class="small" style="margin-top:4px"><b>Agreed separately:</b> work beyond the agreed list, other businesses, the desktop/voice app, finance or marketing automation, and check-ins after handover (agreed before the build ends).</div>
+  </div>
+
+  <div class="reco" data-dark>
+    <div class="ask">One reply: what to change in §1 (or “agreed”), and the date we start.</div>
+    <div class="terms">Before kickoff: one access prompt, and we confirm the date together. Pilot paid upfront; build agreed after the pilot. Your accounts, code and records stay yours, exportable.</div>
+  </div>
+
+  <div class="stamp">/Users/prajwal/abhinav-daga/docs/jarvis-factory-proposal-onepager.html · 2026-09-24 · draft v4.8 (scope/breakage note moved under Build; basis = handoffs + calls) · sources: plan-v3.1, mirror assessment v1.2, calls 8 &amp; 12 Sep · reviews/proposal-v2/</div>
+</div>
+</body>
+</html>
